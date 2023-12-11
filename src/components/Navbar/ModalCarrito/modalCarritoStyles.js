@@ -57,15 +57,39 @@ export const CarritoVacio = styled.div`
 
 export const ContainerCarrito = styled.div`
   height: 50%;
-  background-color: blue;
+  h4 {
+    color: var(--moreGray);
+  }
 `;
 
 export const ContainerTotal = styled.div`
   height: 30%;
-  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h5,
+  h3 {
+    color: var(--moreGray);
+  }
+`;
+
+export const ContainerSubtotalStyled = styled.div`
+  width: 100%;
+  padding: 1rem 1rem;
+  text-align: left;
+  h3 {
+    color: var(--moreGray);
+  }
 `;
 
 export const ContainerTitulo = styled.div`
   height: 10%;
-  background-color: violet;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  .vaciarCarr {
+    cursor: pointer;
+    fill: var(--moreGray);
+  }
 `;

@@ -8,11 +8,15 @@ import {
   ContainerCarrito,
   ContainerTotal,
   ContainerTitulo,
+  ContainerSubtotalStyled,
 } from "./modalCarritoStyles";
 import { MdOutlineClose } from "react-icons/md";
 import { BsExclamationCircle } from "react-icons/bs";
+import { BsTrash } from "react-icons/bs";
 import { AnimatePresence } from "framer-motion";
 import { ModalOverlayStyled } from "../navbarStyles";
+import { formatoPrecio } from "../../../utils/formatoPrecio";
+import Button from "../../Button/Button";
 
 const ModalCarrito = ({ ocultarCarrito, setOcultarCarrito }) => {
   return (
@@ -44,13 +48,23 @@ const ModalCarrito = ({ ocultarCarrito, setOcultarCarrito }) => {
               </TituloModal>
             </HeaderModalCarrito>
             <ContainerCarrito>
-              <ContainerTitulo></ContainerTitulo>
+              <ContainerTitulo>
+                <h4>Tus productos:</h4>
+                <BsTrash id="vaciarCarrito" className="vaciarCarr" />
+              </ContainerTitulo>
               {/* <CarritoVacio>
                 <BsExclamationCircle fill="var(--rojo)" />
                 El carrito de compras está vacío.
               </CarritoVacio> */}
             </ContainerCarrito>
-            <ContainerTotal></ContainerTotal>
+            <ContainerTotal>
+              <ContainerSubtotalStyled>
+                <h5>Subtotal: {formatoPrecio(4000)}</h5>
+                <h5>Costo de envio: {formatoPrecio(1000)}</h5>
+              </ContainerSubtotalStyled>
+              <h3>Total: {formatoPrecio(5000)}</h3>
+              <Button>INICIAR COMPRA</Button>
+            </ContainerTotal>
           </ContainerStyled>
         )}
       </AnimatePresence>
