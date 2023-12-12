@@ -1,13 +1,10 @@
 import React from "react";
 import { AcercaStyledContainer, AcercaText } from "./acercaStyles";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 
 const Acerca = () => {
   return (
     <>
       <AcercaStyledContainer>
-        <Navbar />
         <AcercaText>
           <h2>QUIENES SOMOS</h2>
           <p>
@@ -30,7 +27,6 @@ const Acerca = () => {
           />
         </AcercaText>
       </AcercaStyledContainer>
-      <Footer />
     </>
   );
 };

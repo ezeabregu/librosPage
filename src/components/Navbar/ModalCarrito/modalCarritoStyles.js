@@ -56,7 +56,7 @@ export const CarritoVacio = styled.div`
 `;
 
 export const ContainerCarrito = styled.div`
-  height: 50%;
+  height: 55%;
   h4 {
     color: var(--moreGray);
   }
@@ -91,5 +91,27 @@ export const ContainerTitulo = styled.div`
   .vaciarCarr {
     cursor: pointer;
     fill: var(--moreGray);
+  }
+`;
+
+export const ContainerWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  height: 90%;
+  margin: 0 auto;
+  padding: 1rem;
+  padding-left: 0;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    background: transparent;
+  }
+  &::-webkit-scrollbar:horizontal {
+    display: none;
+  }
+  @media (max-height: 800px) {
+    height: 235px;
   }
 `;

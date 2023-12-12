@@ -4,8 +4,6 @@ import {
   ContactoFormulario,
   ContactoDatosContenedor,
 } from "./contactoStyles";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import Formulario from "../../components/Formulario/Formulario";
 import { FiMapPin } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
@@ -14,7 +12,6 @@ import { CiMail } from "react-icons/ci";
 const Contacto = () => {
   return (
     <>
-      <Navbar />
       <ContactoStyledContainer>
         <ContactoFormulario>
           <h2>Contacto</h2>
@@ -38,7 +35,6 @@ const Contacto = () => {
           </ul>
         </ContactoDatosContenedor>
       </ContactoStyledContainer>
-      <Footer />
     </>
   );
 };
