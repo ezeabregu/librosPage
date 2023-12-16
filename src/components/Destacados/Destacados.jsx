@@ -1,18 +1,21 @@
 import React from "react";
 import { DestacadosContainer, LinkButton } from "./destacadosStyles";
-import { destacadosRandom } from "../../utils/destacadosRandom";
+// import { destacadosRandom } from "../../utils/destacadosRandom";
 import Product from "../ProductCards/Product";
 import { ProductsContainer } from "../ProductCards/productCardsStyles";
+import { useSelector } from "react-redux";
 
 const Destacados = () => {
-  const nuevoArray = destacadosRandom(5);
+  // const nuevoArray = destacadosRandom(5);
+
+  const destacados = useSelector((state) => state.destacados.destacados);
 
   return (
     <>
       <DestacadosContainer>
         <h2>Destacados</h2>
         <ProductsContainer>
-          {nuevoArray.map((Libro) => {
+          {destacados.map((Libro) => {
             return <Product {...Libro} key={Libro.id}></Product>;
           })}
         </ProductsContainer>
