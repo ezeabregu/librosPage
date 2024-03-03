@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 export const ProductosContainerStyled = styled.div`
   width: 100%;

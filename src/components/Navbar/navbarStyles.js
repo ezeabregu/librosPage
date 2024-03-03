@@ -1,4 +1,5 @@
-import { css, styled } from "styled-components";
+import styled from "styled-components";
+import { css } from "styled-components";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 

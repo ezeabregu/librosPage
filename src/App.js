@@ -1,13 +1,26 @@
-import Routes from "./routes/Routes";
+// import Routes from "./routes/Routes";
 import "./App.css";
-import Footer from "./components/Footer/Footer";
+import React from "react";
 import Navbar from "./components/Navbar/Navbar";
+import Productos from "./pages/productos/Productos";
+import Contacto from "./pages/contacto/Contacto";
+import Error404 from "./pages/404/Error404";
+import Acerca from "./pages/acerca/Acerca";
+import Footer from "./components/Footer/Footer";
+import Inicio from "./pages/inicio/Inicio";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Routes />
+      <Routes>
+        <Route path="/" element={<Inicio />} />
+        <Route path="acerca" element={<Acerca />} />
+        <Route path="productos" element={<Productos />} />
+        <Route path="contacto" element={<Contacto />} />
+        <Route path="*" element={<Error404 />} />
+      </Routes>
       <Footer />
     </div>
   );
