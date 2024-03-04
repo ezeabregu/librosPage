@@ -34,7 +34,7 @@ const ModalCarrito = () => {
     if (!ocultarCarrito) {
       dispatch(toggleOcultarCarrito());
     }
-  }, [dispatch, ocultarCarrito]);
+  }, [dispatch]);
 
   const precioTotal = cartItems.reduce((acc, item) => {
     return (acc += item.precio * item.cantidad);

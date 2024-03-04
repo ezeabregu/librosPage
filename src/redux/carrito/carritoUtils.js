@@ -1,25 +1,31 @@
 export const agregarCarrito = (cartItems, product) => {
-  const librosCarrito = cartItems.find((item) => item.id === product.id);
+  const librosCarrito = cartItems.find((item) => {
+    return item.id === product.id;
+  });
   if (librosCarrito) {
-    return cartItems.map((item) =>
-      item.id === librosCarrito.id
+    return cartItems.map((item) => {
+      return item.id === librosCarrito.id
         ? { ...item, cantidad: item.cantidad + 1 }
-        : item
-    );
+        : item;
+    });
   }
   return [...cartItems, { ...product, cantidad: 1 }];
 };
 
 export const borrarCarrito = (cartItems, id) => {
-  const libroABorrar = cartItems.find((item) => item.id === id);
+  const libroABorrar = cartItems.find((item) => {
+    return item.id === id;
+  });
   if (libroABorrar.cantidad > 1) {
-    return cartItems.map((item) =>
-      item.id === libroABorrar.id
+    return cartItems.map((item) => {
+      return item.id === libroABorrar.id
         ? { ...item, cantidad: item.cantidad - 1 }
-        : item
-    );
+        : item;
+    });
   }
-  return cartItems.filter((item) => item.id !== libroABorrar.id);
+  return cartItems.filter((item) => {
+    return item.id !== libroABorrar.id;
+  });
 };
 
 export const resetCostoEnvio = (cartItems, costoEnvio) => {

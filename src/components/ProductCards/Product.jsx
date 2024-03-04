@@ -1,12 +1,12 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { ProductStyled } from "./productCardsStyles";
 import Button from "../Button/Button";
 import { GrBasket } from "react-icons/gr";
 import { formatoPrecio } from "../../utils/formatoPrecio";
-import { useDispatch } from "react-redux";
 import { agregar } from "../../redux/carrito/carritoSlice";
 
-const Product = ({ img, title, price }) => {
+const Product = ({ img, title, price, id }) => {
   const dispatch = useDispatch();
 
   return (
@@ -16,7 +16,7 @@ const Product = ({ img, title, price }) => {
       <p>Precio: {formatoPrecio(price)}</p>
       <Button
         onClick={() => {
-          dispatch(agregar({ img, title, price }));
+          dispatch(agregar({ img, title, price, id }));
         }}
       >
         COMPRAR <GrBasket />

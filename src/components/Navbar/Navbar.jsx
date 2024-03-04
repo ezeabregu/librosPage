@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   NavbarStyled,
   LinkContainer,
@@ -7,17 +7,17 @@ import {
 } from "./navbarStyles";
 import ModalCarrito from "./ModalCarrito/ModalCarrito";
 import CarritoIcono from "./CarritoIcono/CarritoIcono";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleOcultarCarrito } from "../../redux/carrito/carritoSlice";
 
 const Navbar = () => {
-  const [ocultarCarrito, setOcultarCarrito] = useState(true);
+  const ocultarCarrito = useSelector((state) => state.cart.hidden);
+  const dispatch = useDispatch();
 
   return (
     <>
       <NavbarStyled>
-        <ModalCarrito
-          ocultarCarrito={ocultarCarrito}
-          setOcultarCarrito={setOcultarCarrito}
-        />
+        <ModalCarrito />
         <NavLinkStyled to="/">
           <h3>PAGE</h3>
         </NavLinkStyled>
@@ -29,7 +29,7 @@ const Navbar = () => {
           <CartLinkStyled>
             <CarritoIcono
               ocultarCarrito={ocultarCarrito}
-              setOcultarCarrito={setOcultarCarrito}
+              onClick={dispatch(toggleOcultarCarrito())}
             />
           </CartLinkStyled>
         </LinkContainer>
