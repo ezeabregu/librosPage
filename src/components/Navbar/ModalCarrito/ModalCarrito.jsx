@@ -11,6 +11,7 @@ import {
   ContainerTitulo,
   ContainerSubtotalStyled,
   ContainerWrapper,
+  BotonTrash,
 } from "./modalCarritoStyles";
 import { MdOutlineClose } from "react-icons/md";
 import { BsExclamationCircle } from "react-icons/bs";
@@ -24,23 +25,26 @@ import {
   limpiarCarrito,
   toggleOcultarCarrito,
 } from "../../../redux/carrito/carritoSlice";
+import { useNavigate } from "react-router-dom";
 
 const ModalCarrito = () => {
-  const { cartItems, costoEnvio } = useSelector((state) => state.cart);
   const ocultarCarrito = useSelector((state) => state.cart.hidden);
+  const { cartItems, costoEnvio } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!ocultarCarrito) {
       dispatch(toggleOcultarCarrito());
     }
-  }, []);
+  }, [dispatch]);
 
   const precioTotal = cartItems.reduce((acc, item) => {
-    return (acc += item.precio * item.cantidad);
+    return (acc += item.price * item.cantidad);
   }, 0);
 
-  console.log(cartItems.legth);
+  console.log(cartItems.length);
 
   return (
     <>
@@ -63,27 +67,28 @@ const ModalCarrito = () => {
               <TituloModal>
                 <h2>Carrito de compras</h2>
                 <ContenedorBotonCerrarModal
-                  whileTap={{ scale: 0.95 }}
                   onClick={() => dispatch(toggleOcultarCarrito())}
                 >
-                  <MdOutlineClose
-                    size="24px"
-                    onClick={() => dispatch(limpiarCarrito())}
-                    disabled={!cartItems.legth}
-                  />
+                  <MdOutlineClose size="24px" />
                 </ContenedorBotonCerrarModal>
               </TituloModal>
             </HeaderModalCarrito>
             <ContainerCarrito>
               <ContainerTitulo>
                 <h4>Tus productos:</h4>
-                <BsTrash id="vaciarCarrito" className="vaciarCarr" />
+                <BotonTrash disabled={!cartItems.length}>
+                  <BsTrash
+                    id="vaciarCarrito"
+                    className="vaciarCarr"
+                    onClick={() => dispatch(limpiarCarrito())}
+                  />
+                </BotonTrash>
               </ContainerTitulo>
               <ContainerWrapper>
-                {cartItems.legth ? (
-                  cartItems.map((item) => (
-                    <TarjetaLibro key={item.id} {...item} />
-                  ))
+                {cartItems.length ? (
+                  cartItems.map((item) => {
+                    return <TarjetaLibro {...item} key={item.id} />;
+                  })
                 ) : (
                   <CarritoVacio>
                     <BsExclamationCircle fill="var(--rojo)" />
@@ -98,7 +103,15 @@ const ModalCarrito = () => {
                 <h5>Costo de envio: {formatoPrecio(costoEnvio)}</h5>
               </ContainerSubtotalStyled>
               <h3>Total: {formatoPrecio(precioTotal + costoEnvio)}</h3>
-              <Button>INICIAR COMPRA</Button>
+              <Button
+                onClick={() => {
+                  navigate("/");
+                  dispatch(toggleOcultarCarrito());
+                }}
+                disabled={!cartItems.length}
+              >
+                INICIAR COMPRA
+              </Button>
             </ContainerTotal>
           </ContainerStyled>
         )}

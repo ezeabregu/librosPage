@@ -44,7 +44,7 @@ export const ContenedorBotonCerrarModal = styled(motion.button)`
 
 export const CarritoVacio = styled.div`
   position: absolute;
-  top: 100px;
+  top: 30%;
   right: 40px;
   display: flex;
   align-items: center;
@@ -53,6 +53,14 @@ export const CarritoVacio = styled.div`
   color: var(--rojo);
   border: 0.5px solid var(--rojo);
   width: 80%;
+`;
+
+export const BotonTrash = styled.div`
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const ContainerCarrito = styled.div`

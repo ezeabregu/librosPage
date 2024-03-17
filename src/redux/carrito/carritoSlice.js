@@ -3,9 +3,9 @@ import { agregarCarrito, borrarCarrito, resetCostoEnvio } from "./carritoUtils";
 import { SHIPPING_COST } from "../../utils/constants";
 
 const INITIAL_STATE = {
-  hidden: true,
   cartItems: [],
   costoEnvio: 0,
+  hidden: true,
 };
 
 const carritoSlice = createSlice({
