@@ -34,11 +34,13 @@ const ModalCarrito = () => {
     if (!ocultarCarrito) {
       dispatch(toggleOcultarCarrito());
     }
-  }, [dispatch]);
+  }, []);
 
   const precioTotal = cartItems.reduce((acc, item) => {
     return (acc += item.precio * item.cantidad);
   }, 0);
+
+  console.log(cartItems.legth);
 
   return (
     <>

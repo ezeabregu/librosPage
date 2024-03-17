@@ -29,7 +29,7 @@ const Navbar = () => {
           <CartLinkStyled>
             <CarritoIcono
               ocultarCarrito={ocultarCarrito}
-              onClick={dispatch(toggleOcultarCarrito())}
+              onClick={() => dispatch(toggleOcultarCarrito())}
             />
           </CartLinkStyled>
         </LinkContainer>
