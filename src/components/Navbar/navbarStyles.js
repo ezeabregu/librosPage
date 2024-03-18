@@ -36,6 +36,19 @@ export const NavLinkStyled = styled(NavLink)`
 
 export const CartLinkStyled = styled(NavLink)`
   cursor: pointer;
+  span {
+    position: absolute;
+    top: 20px;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+
+    border-radius: 1rem;
+    border: 1px solid white;
+    color: white;
+    background-color: red;
+    font-size: 0.9rem;
+  }
 `;
 
 export const ModalOverlayStyled = styled(motion.div)`

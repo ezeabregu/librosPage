@@ -16,29 +16,33 @@ export const ContainerStyled = styled(motion.div)`
   box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.3);
   @media (max-width: 700px) {
     width: 100%;
+    border-radius: 0 0 0 0;
   }
 `;
 
 export const HeaderModalCarrito = styled.div`
   width: 100%;
-  height: 80px;
-  background-color: var(--moreGray);
+  height: 125px;
+  background-color: var(--rojo);
   border-radius: 1rem 0 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 700px) {
+    border-radius: 0 0 0 0;
+  }
 `;
 
 export const TituloModal = styled.div`
-  width: 80%;
-  height: auto;
+  width: 100%;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
 `;
 
 export const ContenedorBotonCerrarModal = styled(motion.button)`
   border: none;
-  background-color: var(--moreGray);
+  background-color: var(--rojo);
   cursor: pointer;
 `;
 
@@ -55,23 +59,32 @@ export const CarritoVacio = styled.div`
   width: 80%;
 `;
 
-export const BotonTrash = styled.div`
+export const BotonTrash = styled.button`
   width: 20px;
   height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 `;
 
 export const ContainerCarrito = styled.div`
-  height: 55%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   h4 {
     color: var(--moreGray);
   }
 `;
 
 export const ContainerTotal = styled.div`
-  height: 30%;
+  height: 150px;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -92,7 +105,7 @@ export const ContainerSubtotalStyled = styled.div`
 `;
 
 export const ContainerTitulo = styled.div`
-  height: 10%;
+  height: 50px;
   display: flex;
   justify-content: space-between;
   padding: 1rem;
@@ -106,12 +119,10 @@ export const ContainerWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 10px;
   width: 100%;
-  height: 90%;
-  margin: 0 auto;
+  height: 100%;
   padding: 1rem;
-  padding-left: 0;
   overflow: scroll;
   &::-webkit-scrollbar {
     background: transparent;
@@ -120,6 +131,24 @@ export const ContainerWrapper = styled.div`
     display: none;
   }
   @media (max-height: 800px) {
-    height: 235px;
+    height: 350px;
+  }
+`;
+
+export const ContenedorProductosCartStyled = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 350px;
+  background-color: var(--moreGray);
+  border-radius: 7px;
+  gap: 15px;
+  padding: 1rem;
+  box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.3);
+  & img {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    object-fit: cover;
   }
 `;

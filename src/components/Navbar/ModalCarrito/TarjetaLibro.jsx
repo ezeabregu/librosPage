@@ -1,7 +1,10 @@
 import React from "react";
+import { ContenedorProductosCartStyled } from "./modalCarritoStyles";
 
 const TarjetaLibro = () => {
-  return <div>TarjetaLibro</div>;
+  return (
+    <ContenedorProductosCartStyled>Hola Card</ContenedorProductosCartStyled>
+  );
 };
 
 export default TarjetaLibro;

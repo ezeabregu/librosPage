@@ -10,4 +10,9 @@ export const ButtonStyled = styled(motion.button)`
   border-radius: 5px;
   padding: 10px 25px;
   cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 `;
