@@ -47,7 +47,7 @@ export const CartLinkStyled = styled(NavLink)`
     border: 1px solid white;
     color: white;
     background-color: red;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 `;
 

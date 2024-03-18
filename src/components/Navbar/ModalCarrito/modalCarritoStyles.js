@@ -152,3 +152,28 @@ export const ContenedorProductosCartStyled = styled.div`
     object-fit: cover;
   }
 `;
+
+export const ContenedorTituloStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100px;
+`;
+
+export const TituloStyled = styled.p`
+  margin: 0;
+  color: #000;
+  font-size: 0.8rem;
+  font-weight: 600;
+`;
+
+export const PrecioStyled = styled.span`
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+`;
+
+export const ContenedorCantidadStyled = styled.div`
+  display: flex;
+  align-items: center;
+`;
