@@ -140,7 +140,7 @@ export const ContenedorProductosCartStyled = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 350px;
-  background-color: var(--moreGray);
+  background-color: #9f9fa3;
   border-radius: 7px;
   gap: 15px;
   padding: 1rem;

@@ -44,8 +44,6 @@ const ModalCarrito = () => {
     return (acc += item.price * item.cantidad);
   }, 0);
 
-  console.log(cartItems.length);
-
   return (
     <>
       {!ocultarCarrito && (
