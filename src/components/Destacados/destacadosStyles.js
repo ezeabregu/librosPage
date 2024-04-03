@@ -10,6 +10,12 @@ export const DestacadosContainer = styled.div`
     color: var(--moreGray);
     text-align: left;
   }
+
+  @media (max-width: 800px) {
+    h2 {
+      text-align: center;
+    }
+  }
 `;
 
 export const LinkButton = styled(Link)`

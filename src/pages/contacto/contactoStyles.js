@@ -8,6 +8,10 @@ export const ContactoStyledContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  @media (max-width: 800px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;
 
 export const ContactoFormulario = styled.div`

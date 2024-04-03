@@ -29,4 +29,11 @@ export const AcercaText = styled.div`
     border-end-end-radius: 80px 80px;
     border-start-start-radius: 80px 80px;
   }
+
+  @media (max-width: 800px) {
+    width: 80%;
+    p {
+      font-size: 1rem;
+    }
+  }
 `;

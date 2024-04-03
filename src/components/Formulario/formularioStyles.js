@@ -22,6 +22,14 @@ export const FormularioContenedorStyled = styled(Form)`
     color: var(--moreGray);
     outline: none;
   }
+
+  @media (max-width: 800px) {
+    width: 100%;
+    textarea {
+      width: 100%;
+      height: 6rem;
+    }
+  }
 `;
 
 export const InputStyled = styled.input`
@@ -33,6 +41,9 @@ export const InputStyled = styled.input`
   background: transparent;
   color: var(--moreGray);
   outline: none;
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 export const ErrorStyled = styled.span`

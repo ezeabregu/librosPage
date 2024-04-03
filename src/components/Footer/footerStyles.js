@@ -10,4 +10,9 @@ export const FooterStyled = styled.footer`
   background-color: #ed1b2e;
   color: #d7d7d8;
   margin-top: auto;
+  @media (max-width: 800px) {
+    span {
+      font-size: 0.5rem;
+    }
+  }
 `;

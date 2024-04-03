@@ -10,6 +10,9 @@ export const HeroStyledContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 export const HeroStyledText = styled.div`
@@ -30,6 +33,16 @@ export const HeroStyledText = styled.div`
     font-size: 1.5rem;
     margin-bottom: 20px;
   }
+
+  @media (max-width: 800px) {
+    h2 {
+      font-size: 1rem;
+    }
+    h5 {
+      font-size: 1rem;
+      margin: 2rem;
+    }
+  }
 `;
 
 export const HeroStyledImage = styled.div`
@@ -39,6 +52,13 @@ export const HeroStyledImage = styled.div`
   img {
     width: 60%;
     height: 50%;
+  }
+
+  @media (max-width: 800px) {
+    img {
+      width: 250px;
+      height: 200px;
+    }
   }
 `;
 
