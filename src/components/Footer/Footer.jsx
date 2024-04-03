@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <>
       <FooterStyled>
-        Copyright EzzE - 2023. Todos los derechos reservados.
+        <span>Copyright EzzE - 2024. Todos los derechos reservados.</span>
       </FooterStyled>
     </>
   );
