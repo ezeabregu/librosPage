@@ -11,6 +11,9 @@ export const ContactoStyledContainer = styled.div`
   @media (max-width: 800px) {
     flex-direction: column;
     gap: 1rem;
+    height: auto;
+    padding: 0.5rem;
+    margin-top: 5rem;
   }
 `;
 
@@ -27,6 +30,9 @@ export const ContactoFormulario = styled.div`
     font-weight: 700;
     color: var(--moreGray);
   }
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 export const ContactoDatosContenedor = styled.div`
@@ -39,5 +45,8 @@ export const ContactoDatosContenedor = styled.div`
     margin-bottom: 1rem;
     font-weight: 700;
     color: var(--moreGray);
+  }
+  @media (max-width: 800px) {
+    width: 100%;
   }
 `;
