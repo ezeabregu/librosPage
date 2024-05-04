@@ -10,7 +10,7 @@ export const AcercaStyledContainer = styled.div`
   justify-content: center;
   align-items: center;
   img {
-    padding-top: 1rem;
+    padding: 1rem;
     width: 800px;
     border-end-end-radius: 80px 80px;
     border-start-start-radius: 80px 80px;

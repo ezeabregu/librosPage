@@ -14,12 +14,12 @@ const Acerca = () => {
           <p>
             Somos la única editorial argentina pionera en la edición y
             comercialización de libros que está activa, vigente y en constante
-            crecimiento desde hace 110 años. Fundada por Pedro García, hombre de
-            negocios español, registramos el ISBN número 2 y hemos sido siempre
-            parte muy importante de la formación de varias generaciones, tanto
-            de Argentina como también de todos los países de habla hispana.
-            Dentro de nuestro catálogo contamos con autores de renombre nacional
-            e internacional. Algunos de ellos son: Jorge Luis Borges, Victoria
+            crecimiento desde hace 110 años. Fundada por Ezequiel Abregu, hombre
+            de negocios, registramos el ISBN número 2 y hemos sido siempre parte
+            muy importante de la formación de varias generaciones, tanto de
+            Argentina como también de todos los países de habla hispana. Dentro
+            de nuestro catálogo contamos con autores de renombre nacional e
+            internacional. Algunos de ellos son: Jorge Luis Borges, Victoria
             Ocampo, Rodolfo Fogwill, Roberto Arlt, Silvina Ocampo, Juan José
             Saer, Leopoldo Lugones, Julio Cortázar, José Mauro Vasconcelos y
             Antoine de Saint-Exupéry, entre otros. Por todo esto, somos la
