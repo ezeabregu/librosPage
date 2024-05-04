@@ -25,11 +25,11 @@ const Acerca = () => {
             Antoine de Saint-Exupéry, entre otros. Por todo esto, somos la
             editorial argentina más prestigiosa desde 1912.
           </p>
-          <img
-            src="https://fotografias.lasexta.com/clipping/cmsimages02/2018/09/12/D2682B65-7C4C-4DE5-B712-8F65E0CB24B7/98.jpg?crop=1000,563,x0,y51&width=1900&height=1069&optimize=high&format=webply"
-            alt="libreriaImagen"
-          />
         </AcercaText>
+        <img
+          src="https://fotografias.lasexta.com/clipping/cmsimages02/2018/09/12/D2682B65-7C4C-4DE5-B712-8F65E0CB24B7/98.jpg?crop=1000,563,x0,y51&width=1900&height=1069&optimize=high&format=webply"
+          alt="libreriaImagen"
+        />
       </AcercaStyledContainer>
     </>
   );

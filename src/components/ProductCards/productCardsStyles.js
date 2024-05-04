@@ -5,10 +5,36 @@ export const ProductCardsStyledContainer = styled.div`
   max-width: 1300px;
   height: auto;
   margin-top: 90px;
+  margin-bottom: 2rem;
   padding: 15px 0;
   h2 {
     color: var(--moreGray);
     text-align: left;
+  }
+  form {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    input {
+      height: 38px;
+      width: 200px;
+      padding: 12px 20px;
+      color: var(--moreGray);
+      border-radius: 7px;
+      outline: none;
+      border: 1px solid var(--gray);
+    }
+    button {
+      margin-top: 0;
+    }
+  }
+  @media (max-width: 800px) {
+    h2 {
+      text-align: center;
+    }
   }
 `;
 

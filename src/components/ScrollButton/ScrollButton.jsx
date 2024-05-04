@@ -21,14 +21,16 @@ const ScrollButton = () => {
   window.addEventListener("scroll", toggleVisible);
 
   return (
-    <ButtonStyled>
-      <FaArrowCircleUp
-        onClick={scrollToTop}
-        style={{
-          display: visible ? "inline" : "none",
-        }}
-      />
-    </ButtonStyled>
+    <>
+      <ButtonStyled>
+        <FaArrowCircleUp
+          onClick={scrollToTop}
+          style={{
+            display: visible ? "inline" : "none",
+          }}
+        />
+      </ButtonStyled>
+    </>
   );
 };
 

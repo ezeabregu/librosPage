@@ -17,4 +17,7 @@ export const ButtonStyled = styled.button`
   *:hover {
     color: black;
   }
+  @media (max-width: 800px) {
+    left: 45%;
+  }
 `;

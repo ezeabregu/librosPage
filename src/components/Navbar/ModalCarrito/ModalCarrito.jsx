@@ -58,7 +58,7 @@ const ModalCarrito = () => {
             initial={{ traslateX: 600 }}
             animate={{ traslateX: 0 }}
             exit={{ traslateX: 600 }}
-            transition={{ type: "spring", damping: 27 }}
+            transition={{ type: "spring", duration: 0.3 }}
             key="cart-modal"
           >
             <HeaderModalCarrito>
