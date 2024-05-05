@@ -10,9 +10,10 @@ import Product from "./Product";
 import Button from "../Button/Button";
 
 const ProductsCards = () => {
+  let LibrosCopy = [...Libros];
   const [value, setValue] = useState("");
 
-  const listOfBooks = Libros.map((libro) => {
+  const listOfBooks = LibrosCopy.map((libro) => {
     return libro.title;
   });
 
@@ -26,9 +27,10 @@ const ProductsCards = () => {
     });
 
     if (libroSearch) {
-      const obtenerLibro = Libros.find((libro) => {
+      const obtenerLibro = LibrosCopy.find((libro) => {
         return libro.title === libroSearch;
       });
+      LibrosCopy = [obtenerLibro];
       doScroll();
     } else {
       return alert("Libro no encontrado, prueba con otro!");
@@ -46,6 +48,8 @@ const ProductsCards = () => {
     );
   };
 
+  console.log(LibrosCopy);
+
   return (
     <>
       <ProductCardsStyledContainer doScroll={doScroll}>
@@ -62,7 +66,7 @@ const ProductsCards = () => {
         </FormStyled>
 
         <ProductsContainer ref={librosRef}>
-          {Libros.map((libro) => {
+          {LibrosCopy.map((libro) => {
             return <Product {...libro} key={libro.id}></Product>;
           })}
         </ProductsContainer>
