@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   ProductCardsStyledContainer,
   ProductsContainer,
@@ -26,7 +26,10 @@ const ProductsCards = () => {
     });
 
     if (libroSearch) {
-      console.log(libroSearch);
+      const obtenerLibro = Libros.find((libro) => {
+        return libro.title === libroSearch;
+      });
+      doScroll();
     } else {
       return alert("Libro no encontrado, prueba con otro!");
     }
@@ -34,9 +37,18 @@ const ProductsCards = () => {
     setValue("");
   };
 
+  const librosRef = useRef();
+
+  const doScroll = () => {
+    window.scrollTo(
+      librosRef.current.getBoundingClientRect().x,
+      librosRef.current.getBoundingClientRect().y
+    );
+  };
+
   return (
     <>
-      <ProductCardsStyledContainer>
+      <ProductCardsStyledContainer doScroll={doScroll}>
         <h2>Libros</h2>
         <FormStyled>
           <InputFormStyled
@@ -49,7 +61,7 @@ const ProductsCards = () => {
           </Button>
         </FormStyled>
 
-        <ProductsContainer>
+        <ProductsContainer ref={librosRef}>
           {Libros.map((libro) => {
             return <Product {...libro} key={libro.id}></Product>;
           })}

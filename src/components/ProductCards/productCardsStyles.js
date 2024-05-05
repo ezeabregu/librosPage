@@ -25,7 +25,7 @@ export const ProductsContainer = styled.div`
   grid-row-gap: 1rem;
   width: 100%;
   max-width: 1300px;
-  padding: 1rem 0;
+  padding: 5rem 0;
 `;
 
 export const ProductStyled = styled.div`
