@@ -10,6 +10,7 @@ export const ProductCardsStyledContainer = styled.div`
   h2 {
     color: var(--moreGray);
     text-align: left;
+    margin-left: 2rem;
   }
   @media (max-width: 800px) {
     h2 {
@@ -25,7 +26,7 @@ export const ProductsContainer = styled.div`
   grid-row-gap: 1rem;
   width: 100%;
   max-width: 1300px;
-  padding: 5rem 0;
+  padding: 5rem 0 2rem 0;
 `;
 
 export const ProductStyled = styled.div`

@@ -11,6 +11,7 @@ import Button from "../Button/Button";
 
 const ProductsCards = () => {
   let LibrosCopy = [...Libros];
+
   const [value, setValue] = useState("");
 
   const listOfBooks = LibrosCopy.map((libro) => {
@@ -30,12 +31,10 @@ const ProductsCards = () => {
       const obtenerLibro = LibrosCopy.find((libro) => {
         return libro.title === libroSearch;
       });
-      LibrosCopy = [obtenerLibro];
       doScroll();
     } else {
       return alert("Libro no encontrado, prueba con otro!");
     }
-
     setValue("");
   };
 
@@ -48,12 +47,10 @@ const ProductsCards = () => {
     );
   };
 
-  console.log(LibrosCopy);
-
   return (
     <>
       <ProductCardsStyledContainer doScroll={doScroll}>
-        <h2>Libros</h2>
+        <h2>LIBROS</h2>
         <FormStyled>
           <InputFormStyled
             placeholder="Buscar un libro..."
