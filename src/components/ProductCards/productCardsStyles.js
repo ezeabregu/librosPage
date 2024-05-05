@@ -11,26 +11,6 @@ export const ProductCardsStyledContainer = styled.div`
     color: var(--moreGray);
     text-align: left;
   }
-  form {
-    width: 100%;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    input {
-      height: 38px;
-      width: 200px;
-      padding: 12px 20px;
-      color: var(--moreGray);
-      border-radius: 7px;
-      outline: none;
-      border: 1px solid var(--gray);
-    }
-    button {
-      margin-top: 0;
-    }
-  }
   @media (max-width: 800px) {
     h2 {
       text-align: center;
@@ -75,4 +55,26 @@ export const ProductStyled = styled.div`
     font-weight: 700;
     font-size: 1rem;
   }
+`;
+
+export const FormStyled = styled.form`
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  button {
+    margin-top: 0;
+  }
+`;
+
+export const InputFormStyled = styled.input`
+  height: 38px;
+  width: 200px;
+  padding: 12px 20px;
+  color: var(--moreGray);
+  border-radius: 7px;
+  outline: none;
+  border: 1px solid var(--gray);
 `;
