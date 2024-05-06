@@ -9,8 +9,8 @@ const Button = ({
   return (
     <>
       <ButtonStyled
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
+        whileTap={{ scale: 0.9, backgroundColor: "#008000" }}
+        transition={{ type: "spring", stiffness: 500 }}
         onClick={onClick}
         disabled={disabled}
       >
