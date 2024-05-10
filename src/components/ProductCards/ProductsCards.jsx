@@ -36,7 +36,8 @@ const ProductsCards = () => {
     LibrosCopy = Libros.filter((dato) => {
       return dato.title.toLowerCase().includes(search.toLowerCase());
     });
-    doScroll();
+
+    // doScroll();
   }
 
   // const handlerSubmitSearch = (e) => {
@@ -80,9 +81,11 @@ const ProductsCards = () => {
           </Button> */}
         </FormStyled>
         <ProductsContainer ref={librosRef}>
-          {LibrosCopy.map((libro) => {
-            return <Product {...libro} key={libro.id}></Product>;
-          })}
+          {!LibrosCopy.length
+            ? alert("Libro no encontrado")
+            : LibrosCopy.map((libro) => {
+                return <Product {...libro} key={libro.id}></Product>;
+              })}
         </ProductsContainer>
       </ProductCardsStyledContainer>
     </>
