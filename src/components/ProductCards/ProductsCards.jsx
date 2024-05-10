@@ -10,28 +10,31 @@ import Product from "./Product";
 import Button from "../Button/Button";
 
 const ProductsCards = () => {
-  let LibrosCopy = [...Libros];
+  let LibrosCopy = Libros;
 
   const [value, setValue] = useState("");
-
-  const listOfBooks = LibrosCopy.map((libro) => {
+  const listOfBooks = Libros.map((libro) => {
     return libro.title;
   });
 
   const handlerSubmitSearch = (e) => {
     e.preventDefault();
 
-    const newSearch = value.trim().toLowerCase();
+    const newSearch = value.trim();
 
     const libroSearch = listOfBooks.find((libro) => {
       return libro.toLowerCase() === newSearch;
     });
 
     if (libroSearch) {
-      const obtenerLibro = LibrosCopy.find((libro) => {
-        return libro.title === libroSearch;
+      LibrosCopy = Libros.filter((libro) => {
+        return libro.title.toLowerCase().includes(libroSearch.toLowerCase());
       });
+
       doScroll();
+      // const obtenerLibro = LibrosCopy.find((libro) => {
+      //   return libro.title === libroSearch;
+      // });
     } else {
       return alert("Libro no encontrado, prueba con otro!");
     }
@@ -61,7 +64,6 @@ const ProductsCards = () => {
             Buscar
           </Button>
         </FormStyled>
-
         <ProductsContainer ref={librosRef}>
           {LibrosCopy.map((libro) => {
             return <Product {...libro} key={libro.id}></Product>;
