@@ -81,11 +81,13 @@ const ProductsCards = () => {
           </Button> */}
         </FormStyled>
         <ProductsContainer ref={librosRef}>
-          {!LibrosCopy.length
-            ? alert("Libro no encontrado")
-            : LibrosCopy.map((libro) => {
-                return <Product {...libro} key={libro.id}></Product>;
-              })}
+          {!LibrosCopy.length ? (
+            <span>Libro no encontrado...</span>
+          ) : (
+            LibrosCopy.map((libro) => {
+              return <Product {...libro} key={libro.id}></Product>;
+            })
+          )}
         </ProductsContainer>
       </ProductCardsStyledContainer>
     </>

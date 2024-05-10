@@ -4,7 +4,7 @@ export const ProductCardsStyledContainer = styled.div`
   width: 100%;
   max-width: 1300px;
   height: auto;
-  margin-top: 90px;
+  margin-top: 80px;
   margin-bottom: 2rem;
   padding: 15px 0;
   h2 {
@@ -27,6 +27,10 @@ export const ProductsContainer = styled.div`
   width: 100%;
   max-width: 1300px;
   padding: 2.5rem 0 2rem 0;
+  span {
+    color: red;
+    font-size: 2rem;
+  }
 `;
 
 export const ProductStyled = styled.div`
