@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const ProductCardsStyledContainer = styled.div`
   width: 100%;
@@ -82,4 +83,25 @@ export const InputFormStyled = styled.input`
   border-radius: 7px;
   outline: none;
   border: 1px solid var(--gray);
+`;
+
+export const LinkButton = styled(Link)`
+  color: var(--textGray);
+  background-color: var(--rojo);
+  font-weight: 700;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 25px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+
+export const LinkButtonContainer = styled.div`
+  width: 100%;
+  max-width: 1300px;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-around;
 `;

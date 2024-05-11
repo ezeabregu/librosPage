@@ -1,7 +1,7 @@
 import React from "react";
-import { ButtonStyled } from "./buttonStyles";
+import { ButtonStyled } from "./buttonDefectStyles";
 
-const Button = ({
+const ButtonDefect = ({
   children,
   onClick = (e) => e.preventDefault(),
   disabled,
@@ -10,8 +10,7 @@ const Button = ({
   return (
     <>
       <ButtonStyled
-        whileTap={{ scale: 0.9, backgroundColor: "#008000" }}
-        transition={{ type: "spring", stiffness: 500 }}
+        // whileTap={{ opacity: 0.5 }}
         onClick={onClick}
         disabled={disabled}
       >
@@ -21,4 +20,4 @@ const Button = ({
   );
 };
 
-export default Button;
+export default ButtonDefect;

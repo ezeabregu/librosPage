@@ -4,11 +4,16 @@ import {
   ProductsContainer,
   FormStyled,
   InputFormStyled,
+  LinkButtonContainer,
 } from "./productCardsStyles";
-import { Libros } from "../../data/libros";
+import { Libros, TotalLibros } from "../../data/libros";
 import Product from "./Product";
+import { INITIAL_LIMIT_BOOKS } from "../../utils/constants";
+import ButtonDefect from "../ButtonDefect/ButtonDefect";
 
 const ProductsCards = () => {
+  const [limit, setLimit] = useState(INITIAL_LIMIT_BOOKS);
+
   let LibrosCopy = {};
 
   // const [value, setValue] = useState("");
@@ -85,10 +90,33 @@ const ProductsCards = () => {
             <span>Libro no encontrado...</span>
           ) : (
             LibrosCopy.map((libro) => {
-              return <Product {...libro} key={libro.id}></Product>;
+              if (limit >= libro.id || search) {
+                return <Product {...libro} key={libro.id}></Product>;
+              }
+              return null;
             })
           )}
         </ProductsContainer>
+        {!search && (
+          <LinkButtonContainer>
+            <ButtonDefect
+              onClick={() =>
+                setLimit((prevLimit) => prevLimit - INITIAL_LIMIT_BOOKS)
+              }
+              disabled={INITIAL_LIMIT_BOOKS === limit}
+            >
+              Ver menos
+            </ButtonDefect>
+            <ButtonDefect
+              onClick={() =>
+                setLimit((prevLimit) => prevLimit + INITIAL_LIMIT_BOOKS)
+              }
+              disabled={TotalLibros <= limit}
+            >
+              Ver más
+            </ButtonDefect>
+          </LinkButtonContainer>
+        )}
       </ProductCardsStyledContainer>
     </>
   );

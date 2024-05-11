@@ -300,3 +300,5 @@ export const Libros = [
     price: "10499",
   },
 ];
+
+export const TotalLibros = Libros.length;
