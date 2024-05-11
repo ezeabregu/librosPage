@@ -5,6 +5,7 @@ import {
   FormStyled,
   InputFormStyled,
   LinkButtonContainer,
+  LabelNotFound,
 } from "./productCardsStyles";
 import { Libros, TotalLibros } from "../../data/libros";
 import Product from "./Product";
@@ -87,7 +88,9 @@ const ProductsCards = () => {
         </FormStyled>
         <ProductsContainer ref={librosRef}>
           {!LibrosCopy.length ? (
-            <span>Libro no encontrado...</span>
+            <LabelNotFound>
+              <span>Libro no encontrado...</span>
+            </LabelNotFound>
           ) : (
             LibrosCopy.map((libro) => {
               if (limit >= libro.id || search) {

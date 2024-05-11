@@ -299,6 +299,30 @@ export const Libros = [
     img: "https://d3ugyf2ht6aenh.cloudfront.net/stores/002/304/650/products/mci-3538839789878266176-ec0fdacb5737a12b8617010691290075-1024-1024.webp",
     price: "10499",
   },
+  {
+    id: 51,
+    title: "Harry Potter y las reliquias de la muerte (Griffindor)",
+    img: "https://acdn.mitiendanube.com/stores/002/304/650/products/mci-3614219788418797095-5cb8aab0e45f3f7bc117010858057732-480-0.webp",
+    price: "77600",
+  },
+  {
+    id: 52,
+    title: "Harry Potter y las reliquias de la muerte (Hufflepuff)",
+    img: "https://acdn.mitiendanube.com/stores/002/304/650/products/mci-3614229788418797088-cb76baeccf65646c2f17010858062802-480-0.webp",
+    price: "77600",
+  },
+  {
+    id: 53,
+    title: "Harry Potter y las reliquias de la muerte (Ravenclaw)",
+    img: "https://acdn.mitiendanube.com/stores/002/304/650/products/mci-3614239788418797064-015dcfd66f327b171317010858084419-480-0.webp",
+    price: "77600",
+  },
+  {
+    id: 54,
+    title: "Harry Potter y las reliquias de la muerte (Slytherin)",
+    img: "https://acdn.mitiendanube.com/stores/002/304/650/products/mci-3614249788418797071-6f5b5df9cb6b2d096a17010858085242-480-0.webp",
+    price: "77600",
+  },
 ];
 
 export const TotalLibros = Libros.length;

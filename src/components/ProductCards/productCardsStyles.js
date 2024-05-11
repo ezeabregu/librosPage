@@ -28,10 +28,6 @@ export const ProductsContainer = styled.div`
   width: 100%;
   max-width: 1300px;
   padding: 2.5rem 0 2rem 0;
-  span {
-    color: red;
-    font-size: 2rem;
-  }
 `;
 
 export const ProductStyled = styled.div`
@@ -104,4 +100,11 @@ export const LinkButtonContainer = styled.div`
   padding: 0.5rem;
   display: flex;
   justify-content: space-around;
+`;
+
+export const LabelNotFound = styled.label`
+  span {
+    color: var(--moreGray);
+    font-size: 1.5rem;
+  }
 `;

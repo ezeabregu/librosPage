@@ -55,10 +55,10 @@ const ModalCarrito = () => {
       <AnimatePresence>
         {!ocultarCarrito && (
           <ContainerStyled
-            initial={{ traslateX: 600 }}
-            animate={{ traslateX: 0 }}
-            exit={{ traslateX: 600 }}
-            transition={{ type: "spring", duration: 0.3 }}
+            initial={{ translateX: 600 }}
+            animate={{ translateX: 0 }}
+            exit={{ translateX: 600 }}
+            transition={{ type: "spring", damping: 27 }}
             key="cart-modal"
           >
             <HeaderModalCarrito>
