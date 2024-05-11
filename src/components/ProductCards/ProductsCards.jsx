@@ -11,6 +11,7 @@ import { Libros, TotalLibros } from "../../data/libros";
 import Product from "./Product";
 import { INITIAL_LIMIT_BOOKS } from "../../utils/constants";
 import ButtonDefect from "../ButtonDefect/ButtonDefect";
+import { FiDelete } from "react-icons/fi";
 
 const ProductsCards = () => {
   const [limit, setLimit] = useState(INITIAL_LIMIT_BOOKS);
@@ -85,6 +86,14 @@ const ProductsCards = () => {
           {/* <Button onClick={(e) => handlerSubmitSearch(e)} disabled={!value}>
             Buscar
           </Button> */}
+          <ButtonDefect
+            onClick={(e) => {
+              setSearch("");
+              e.preventDefault();
+            }}
+          >
+            <FiDelete style={{ fontSize: 15 }} />
+          </ButtonDefect>
         </FormStyled>
         <ProductsContainer ref={librosRef}>
           {!LibrosCopy.length ? (
