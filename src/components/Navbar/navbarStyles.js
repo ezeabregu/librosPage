@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { css } from "styled-components";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
+import Button from "../Button/Button";
 
 export const NavbarStyled = styled.header`
   width: 100%;
@@ -25,6 +26,20 @@ export const LinkContainer = styled.ul`
   display: flex;
   gap: 20px;
   color: var(--gray);
+  @media (max-width: 800px) {
+    display: none;
+  }
+`;
+
+export const BurgerMenu = styled.div`
+  display: none;
+  @media (max-width: 800px) {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const NavLinkStyled = styled(NavLink)`

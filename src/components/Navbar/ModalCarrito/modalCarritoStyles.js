@@ -140,16 +140,16 @@ export const ContenedorProductosCartStyled = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 350px;
-  background-color: #9f9fa3;
+  max-height: 100px;
+  /* background-color: #9f9fa3; */
   border-radius: 7px;
   gap: 15px;
-  padding: 1rem;
+  padding: 0.8rem;
   box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.3);
   & img {
-    width: 80px;
+    width: 100px;
     height: 80px;
-    border-radius: 16px;
-    object-fit: cover;
+    object-fit: contain;
   }
 `;
 
@@ -163,12 +163,12 @@ export const ContenedorTituloStyled = styled.div`
 export const TituloStyled = styled.p`
   margin: 0;
   color: #000;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 600;
 `;
 
 export const PrecioStyled = styled.span`
-  color: #fff;
+  color: var(--rojo);
   font-size: 1rem;
   font-weight: 600;
 `;
@@ -176,4 +176,7 @@ export const PrecioStyled = styled.span`
 export const ContenedorCantidadStyled = styled.div`
   display: flex;
   align-items: center;
+  * {
+    color: var(--moreGray);
+  }
 `;

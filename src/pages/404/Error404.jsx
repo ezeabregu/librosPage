@@ -1,6 +1,6 @@
 import React from "react";
 import { Error404StyledContainer, Error404Text } from "./Error404Styles";
-import Button from "../../components/Button/Button";
+import ButtonDefect from "../../components/ButtonDefect/ButtonDefect";
 import { NavLinkStyled } from "../../components/Navbar/navbarStyles";
 import { useNavigate } from "react-router-dom";
 
@@ -16,7 +16,7 @@ const Error404 = () => {
             navigate("/");
           }}
         >
-          <Button>Ir al inicio</Button>
+          <ButtonDefect>Ir al inicio</ButtonDefect>
         </NavLinkStyled>
       </Error404StyledContainer>
     </>
