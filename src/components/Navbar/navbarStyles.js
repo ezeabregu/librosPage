@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { css } from "styled-components";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
-import Button from "../Button/Button";
 
 export const NavbarStyled = styled.header`
   width: 100%;
@@ -46,6 +45,11 @@ export const NavLinkStyled = styled(NavLink)`
   cursor: pointer;
   &.active {
     font-weight: 700;
+  }
+  @media (max-width: 800px) {
+    span {
+      display: none;
+    }
   }
 `;
 
