@@ -8,6 +8,7 @@ import {
 } from "./navbarStyles";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CgClose } from "react-icons/cg";
+import MenuBurger from "./MenuBurger/MenuBurger";
 import ModalCarrito from "./ModalCarrito/ModalCarrito";
 import CarritoIcono from "./CarritoIcono/CarritoIcono";
 import { useDispatch, useSelector } from "react-redux";
@@ -49,6 +50,7 @@ const Navbar = () => {
           )}
         </BurgerMenu>
       </NavbarStyled>
+      {isOpen ? <MenuBurger /> : null}
     </>
   );
 };
