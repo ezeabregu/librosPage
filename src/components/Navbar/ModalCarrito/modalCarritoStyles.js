@@ -127,7 +127,7 @@ export const ContainerWrapper = styled.div`
   &::-webkit-scrollbar {
     background: transparent;
   }
-  &::-webkit-scrollbar:horizontal {
+  &::-webkit-scrollbar {
     display: none;
   }
   @media (max-height: 800px) {

@@ -1,22 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { ButtonStyled } from "./buttonStyles";
+import { GrBasket } from "react-icons/gr";
+import { BsCartCheck } from "react-icons/bs";
 
-const Button = ({
-  children,
-  onClick = (e) => e.preventDefault(),
-  disabled,
-}) => {
+const Button = ({ onClick = (e) => e.preventDefault() }) => {
   // Boton para comprar libros dentro de las tarjetas
+
+  const [buttonText, setButtonText] = useState("Comprar ");
+
+  const [isActive, setIsActive] = useState(false);
+
+  const handleClick = () => {
+    setIsActive(true);
+    setButtonText("Comprando... ");
+
+    setTimeout(() => {
+      setButtonText("Listo! ");
+    }, 1500);
+
+    setTimeout(() => {
+      setButtonText("Comprar ");
+      setIsActive(false);
+    }, 3000);
+  };
+
   return (
     <>
-      <ButtonStyled
-        whileTap={{ scale: 0.9, backgroundColor: "#008000" }}
-        transition={{ type: "spring", stiffness: 500 }}
-        onClick={onClick}
-        disabled={disabled}
-      >
-        {children}
-      </ButtonStyled>
+      <motion.div>
+        <ButtonStyled
+          onClick={() => {
+            onClick();
+            handleClick();
+          }}
+        >
+          {buttonText}
+          {isActive ? <BsCartCheck /> : <GrBasket />}
+        </ButtonStyled>
+      </motion.div>
     </>
   );
 };

@@ -9,6 +9,7 @@ import Acerca from "./pages/acerca/Acerca";
 import Footer from "./components/Footer/Footer";
 import Inicio from "./pages/inicio/Inicio";
 import { Route, Routes } from "react-router-dom";
+import { ModalStyled } from "./components/UI/Modal/modalStyles";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="contacto" element={<Contacto />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
+      <ModalStyled />;
       <Footer />
     </div>
   );
