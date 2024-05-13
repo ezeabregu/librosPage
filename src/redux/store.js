@@ -1,6 +1,7 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import destacadosReducer from "./destacados/destacadosSlice";
 import carritoReducer from "./carrito/carritoSlice";
+import menuBurgerReducer from "./menuBurger/menuBurgerSlice";
 import storage from "redux-persist/lib/storage";
 import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/lib/persistStore";
@@ -8,6 +9,7 @@ import persistStore from "redux-persist/lib/persistStore";
 const reducers = combineReducers({
   destacados: destacadosReducer,
   cart: carritoReducer,
+  menuBurger: menuBurgerReducer,
 });
 
 const persistConfig = {
