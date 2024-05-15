@@ -6,6 +6,7 @@ import CarritoIcono from "../CarritoIcono/CarritoIcono";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleOcultarCarrito } from "../../../redux/carrito/carritoSlice";
 import { toggleOcultarMenuBurger } from "../../../redux/menuBurger/menuBurgerSlice";
+import { useEffect } from "react";
 
 const MenuBurger = () => {
   const ocultarCarrito = useSelector((state) => state.cart.hidden);
@@ -13,25 +14,51 @@ const MenuBurger = () => {
 
   const ocultarMenuBurger = useSelector((state) => state.menuBurger.hidden);
 
+  useEffect(() => {
+    if (!ocultarMenuBurger) {
+      dispatch(toggleOcultarMenuBurger());
+    }
+  }, [dispatch]);
+
   return (
-    <LinkContainerStyled>
-      <NavLinkStyled
-        to="/acerca"
-        ocultarMenuBurger={ocultarMenuBurger}
-        onClick={() => dispatch(toggleOcultarMenuBurger())}
-      >
-        Sobre Nosotros
-      </NavLinkStyled>
-      <NavLinkStyled to="/productos">Libros</NavLinkStyled>
-      <NavLinkStyled to="/contacto">Contacto</NavLinkStyled>
-      <NavLinkStyled to="/login">Ingresá</NavLinkStyled>
-      <CartLinkStyled>
-        <CarritoIcono
-          ocultarCarrito={ocultarCarrito}
-          onClick={() => dispatch(toggleOcultarCarrito())}
-        />
-      </CartLinkStyled>
-    </LinkContainerStyled>
+    <>
+      {ocultarMenuBurger && (
+        <LinkContainerStyled>
+          <NavLinkStyled
+            to="/acerca"
+            onClick={() => dispatch(toggleOcultarMenuBurger())}
+          >
+            Sobre Nosotros
+          </NavLinkStyled>
+          <NavLinkStyled
+            to="/productos"
+            onClick={() => dispatch(toggleOcultarMenuBurger())}
+          >
+            Libros
+          </NavLinkStyled>
+          <NavLinkStyled
+            to="/contacto"
+            onClick={() => dispatch(toggleOcultarMenuBurger())}
+          >
+            Contacto
+          </NavLinkStyled>
+          <NavLinkStyled
+            to="/login"
+            onClick={() => dispatch(toggleOcultarMenuBurger())}
+          >
+            Ingresá
+          </NavLinkStyled>
+          <CartLinkStyled>
+            <CarritoIcono
+              ocultarCarrito={ocultarCarrito}
+              onClick={() => {
+                dispatch(toggleOcultarCarrito(), ocultarMenuBurger());
+              }}
+            />
+          </CartLinkStyled>
+        </LinkContainerStyled>
+      )}
+    </>
   );
 };
 
