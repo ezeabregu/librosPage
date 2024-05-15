@@ -19,6 +19,7 @@ const Navbar = () => {
   const ocultarCarrito = useSelector((state) => state.cart.hidden);
   const dispatch = useDispatch();
 
+  const ocultarMenuBurger = useSelector((state) => state.menuBurger.hidden);
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -43,7 +44,7 @@ const Navbar = () => {
         </LinkContainer>
 
         <BurgerMenu onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? (
+          {isOpen && ocultarMenuBurger ? (
             <CgClose style={{ fontSize: "2rem" }} />
           ) : (
             <GiHamburgerMenu style={{ fontSize: "2rem" }} />
