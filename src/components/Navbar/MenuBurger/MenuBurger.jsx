@@ -18,7 +18,7 @@ const MenuBurger = () => {
     if (!ocultarMenuBurger) {
       dispatch(toggleOcultarMenuBurger());
     }
-  }, [dispatch]);
+  }, [dispatch, ocultarMenuBurger]);
 
   return (
     <>

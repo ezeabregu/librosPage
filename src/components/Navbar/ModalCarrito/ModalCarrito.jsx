@@ -19,7 +19,7 @@ import { BsTrash } from "react-icons/bs";
 import { AnimatePresence } from "framer-motion";
 import { ModalOverlayStyled } from "../navbarStyles";
 import { formatoPrecio } from "../../../utils/formatoPrecio";
-import Button from "../../Button/Button";
+import ButtonDefect from "../../ButtonDefect/ButtonDefect";
 import TarjetaLibro from "./TarjetaLibro";
 import {
   limpiarCarrito,
@@ -78,7 +78,11 @@ const ModalCarrito = () => {
                   <BsTrash
                     id="vaciarCarrito"
                     className="vaciarCarr"
-                    onClick={() => dispatch(limpiarCarrito())}
+                    onClick={() => {
+                      if (window.confirm("Desea vaciar el carrito?") === true) {
+                        dispatch(limpiarCarrito());
+                      }
+                    }}
                   />
                 </BotonTrash>
               </ContainerTitulo>
@@ -101,15 +105,18 @@ const ModalCarrito = () => {
                 <h5>Costo de envio: {formatoPrecio(costoEnvio)}</h5>
               </ContainerSubtotalStyled>
               <h3>Total: {formatoPrecio(precioTotal + costoEnvio)}</h3>
-              <Button
+              <ButtonDefect
                 onClick={() => {
-                  navigate("/");
-                  dispatch(toggleOcultarCarrito());
+                  if (window.confirm("Confirmar la compra?") === true) {
+                    navigate("/");
+                    dispatch(toggleOcultarCarrito());
+                    dispatch(limpiarCarrito());
+                  }
                 }}
                 disabled={!cartItems.length}
               >
                 INICIAR COMPRA
-              </Button>
+              </ButtonDefect>
             </ContainerTotal>
           </ContainerStyled>
         )}

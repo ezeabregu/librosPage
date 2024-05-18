@@ -6,7 +6,7 @@ const Modal = ({ children, active }) => {
     ModalStyled.classList.remove("active");
   }, 1500);
 
-  return <ModalStyled>{children}</ModalStyled>;
+  return <ModalStyled className={active}>{children}</ModalStyled>;
 };
 
 export default Modal;
