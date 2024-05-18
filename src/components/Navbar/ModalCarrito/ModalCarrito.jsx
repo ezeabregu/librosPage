@@ -81,6 +81,7 @@ const ModalCarrito = () => {
                     onClick={() => {
                       if (window.confirm("Desea vaciar el carrito?") === true) {
                         dispatch(limpiarCarrito());
+                        dispatch(toggleOcultarCarrito());
                       }
                     }}
                   />
