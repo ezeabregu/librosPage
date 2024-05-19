@@ -112,6 +112,7 @@ const ModalCarrito = () => {
                     navigate("/");
                     dispatch(toggleOcultarCarrito());
                     dispatch(limpiarCarrito());
+                    window.location.reload();
                   }
                 }}
                 disabled={!cartItems.length}

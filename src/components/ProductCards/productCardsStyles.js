@@ -33,8 +33,12 @@ export const ProductsContainer = styled.div`
 export const ProductStyled = styled.div`
   background-color: white;
   width: 200px;
+  height: 350px;
   border-radius: 5px;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   img {
     width: 100%;
@@ -47,15 +51,15 @@ export const ProductStyled = styled.div`
   }
   h2 {
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.7rem;
     margin: 0;
   }
   p {
     color: black;
-    padding: 8px 0;
+    padding: 2px 0;
     text-align: start;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 `;
 
