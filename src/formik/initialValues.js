@@ -4,3 +4,8 @@ export const initialValues = {
   email: "",
   asunto: "",
 };
+
+export const loginValues = {
+  email: "",
+  password: "",
+};

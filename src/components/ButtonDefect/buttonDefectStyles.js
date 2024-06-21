@@ -15,4 +15,8 @@ export const ButtonStyled = styled(motion.button)`
     opacity: 0.8;
     cursor: not-allowed;
   }
+
+  :hover {
+    opacity: 0.9;
+  }
 `;

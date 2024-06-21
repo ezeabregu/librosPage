@@ -14,3 +14,12 @@ export const validation = Yup.object({
     .required("Campo requerido"),
   asunto: Yup.string().trim().required("Campo requerido"),
 });
+
+export const validationLogin = Yup.object({
+  email: Yup.string()
+    .email("Ingresa un correo electronico válido")
+    .required("Campo requerido"),
+  password: Yup.string()
+    .min(6, "La contraseña debe tener al menos 6 caracteres")
+    .required("Campo requerido"),
+});

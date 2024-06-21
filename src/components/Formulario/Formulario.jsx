@@ -37,7 +37,13 @@ const Formulario = () => {
           <Field name="email" type="email" id="email" as={InputStyled}></Field>
           <ErrorMessage name="email" component={ErrorStyled} />
           <h3>Asunto:</h3>
-          <Field name="asunto" type="text" id="asunto" as="textarea"></Field>
+          <Field
+            name="asunto"
+            type="text"
+            id="asunto"
+            component="textarea"
+            col={50}
+          ></Field>
           <ErrorMessage name="asunto" component={ErrorStyled} />
           <ButtonForm>ENVIAR</ButtonForm>
         </FormularioContenedorStyled>

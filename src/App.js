@@ -10,6 +10,7 @@ import Footer from "./components/Footer/Footer";
 import Inicio from "./pages/inicio/Inicio";
 import { Route, Routes } from "react-router-dom";
 import { ModalStyled } from "./components/UI/Modal/modalStyles";
+import Login from "./pages/login/Login";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="acerca" element={<Acerca />} />
         <Route path="productos" element={<Productos />} />
         <Route path="contacto" element={<Contacto />} />
+        <Route path="login" element={<Login />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
       <ModalStyled />;
