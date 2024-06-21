@@ -17,7 +17,6 @@ const Login = () => {
         onSubmit={(values, { resetForm }) => {
           console.log(values);
           resetForm();
-          alert("Login enviado correctamente.");
         }}
       >
         <LoginContainer>
