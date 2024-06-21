@@ -11,6 +11,7 @@ import Inicio from "./pages/inicio/Inicio";
 import { Route, Routes } from "react-router-dom";
 import { ModalStyled } from "./components/UI/Modal/modalStyles";
 import Login from "./pages/login/Login";
+import SignUp from "./pages/signUp/SignUp";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="productos" element={<Productos />} />
         <Route path="contacto" element={<Contacto />} />
         <Route path="login" element={<Login />} />
+        <Route path="register" element={<SignUp />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
       <ModalStyled />;

@@ -1,3 +1,4 @@
+//Datos para formulario
 export const initialValues = {
   nombre: "",
   apellido: "",
@@ -6,6 +7,12 @@ export const initialValues = {
 };
 
 export const loginValues = {
+  email: "",
+  password: "",
+};
+
+export const signUpValues = {
+  name: "",
   email: "",
   password: "",
 };
