@@ -24,6 +24,7 @@ export const FormularioContenedorStyled = styled(Form)`
   }
 
   @media (max-width: 800px) {
+    padding: 0px 50px;
     width: 100%;
     textarea {
       width: 100%;
