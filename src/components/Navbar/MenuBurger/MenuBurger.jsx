@@ -27,22 +27,13 @@ const MenuBurger = () => {
           <NavLinkStyled to="/acerca" onClick={() => ocultarMenuBurger()}>
             Sobre Nosotros
           </NavLinkStyled>
-          <NavLinkStyled
-            to="/productos"
-            onClick={() => dispatch(toggleOcultarMenuBurger())}
-          >
+          <NavLinkStyled to="/productos" onClick={() => ocultarMenuBurger()}>
             Libros
           </NavLinkStyled>
-          <NavLinkStyled
-            to="/contacto"
-            onClick={() => dispatch(toggleOcultarMenuBurger())}
-          >
+          <NavLinkStyled to="/contacto" onClick={() => ocultarMenuBurger()}>
             Contacto
           </NavLinkStyled>
-          <NavLinkStyled
-            to="/login"
-            onClick={() => dispatch(toggleOcultarMenuBurger())}
-          >
+          <NavLinkStyled to="/login" onClick={() => ocultarMenuBurger()}>
             Ingresá
           </NavLinkStyled>
           <CartLinkStyled>
