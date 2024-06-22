@@ -24,10 +24,7 @@ const MenuBurger = () => {
     <>
       {ocultarMenuBurger && (
         <LinkContainerStyled>
-          <NavLinkStyled
-            to="/acerca"
-            onClick={() => dispatch(toggleOcultarMenuBurger())}
-          >
+          <NavLinkStyled to="/acerca" onClick={() => ocultarMenuBurger()}>
             Sobre Nosotros
           </NavLinkStyled>
           <NavLinkStyled
