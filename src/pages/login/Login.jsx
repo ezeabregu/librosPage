@@ -7,16 +7,30 @@ import { InputStyled } from "../../components/Formulario/formularioStyles";
 import { ErrorStyled } from "../../components/Formulario/formularioStyles";
 import ButtonForm from "../../components/ButtonForm/ButtonForm";
 import { LinkButton } from "../../components/Hero/heroStyles";
+import { loginUser } from "../../axios/axiosUser";
+import { useDispatch } from "react-redux";
+import { setCurrentUser } from "../../redux/user";
+import useRedirect from "../../hooks/useRedirect";
 
 const Login = () => {
+  const dispatch = useDispatch();
+  useRedirect("/");
+
   return (
     <>
       <Formik
         initialValues={loginValues}
         validationSchema={validationLogin}
-        onSubmit={(values, { resetForm }) => {
-          console.log(values);
-          resetForm();
+        onSubmit={async (values) => {
+          const user = await loginUser(values.email, values.password);
+          if (user) {
+            dispatch(
+              setCurrentUser({
+                ...user.user,
+                token: user.token,
+              })
+            );
+          }
         }}
       >
         <LoginContainer>
