@@ -35,7 +35,7 @@ const Login = () => {
       >
         <LoginContainer>
           <h2>PAGE</h2>
-          <label>¡El libro que buscás, esta acá!</label>
+          <label>¡El libro que buscás, esta acá!2</label>
           <Field
             name="email"
             type="email"
