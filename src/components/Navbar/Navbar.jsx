@@ -22,6 +22,8 @@ const Navbar = () => {
   const ocultarMenuBurger = useSelector((state) => state.menuBurger.hidden);
   const [isOpen, setIsOpen] = useState(false);
 
+  const currentUser = useSelector((state) => state.user.currentUser);
+
   return (
     <>
       <NavbarStyled>
@@ -34,7 +36,9 @@ const Navbar = () => {
           <NavLinkStyled to="/acerca">Sobre Nosotros</NavLinkStyled>
           <NavLinkStyled to="/productos">Libros</NavLinkStyled>
           <NavLinkStyled to="/contacto">Contacto</NavLinkStyled>
-          <NavLinkStyled to="/login">Ingresá</NavLinkStyled>
+          <NavLinkStyled to="/login">
+            <span>{currentUser ? `${currentUser.name}` : "Ingresá"}</span>
+          </NavLinkStyled>
           <CartLinkStyled>
             <CarritoIcono
               ocultarCarrito={ocultarCarrito}
