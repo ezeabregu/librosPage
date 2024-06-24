@@ -7,7 +7,7 @@ import {
 import ButtonForm from "../ButtonForm/ButtonForm";
 import { ErrorMessage, Field, Formik } from "formik";
 import { initialValues } from "../../formik/initialValues";
-import { validation } from "../../formik/validation";
+import { validation } from "../../formik/validationSchema";
 
 const Formulario = () => {
   return (

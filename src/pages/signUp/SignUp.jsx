@@ -2,21 +2,37 @@ import React from "react";
 import { SignUpContainer } from "./signUpStyles";
 import { Formik, Field, ErrorMessage } from "formik";
 import { signUpValues } from "../../formik/initialValues";
-import { validationSignUp } from "../../formik/validation";
+import { validationSignUp } from "../../formik/validationSchema";
 import { InputStyled } from "../../components/Formulario/formularioStyles";
 import { ErrorStyled } from "../../components/Formulario/formularioStyles";
 import ButtonForm from "../../components/ButtonForm/ButtonForm";
 import { LinkButton } from "../../components/Hero/heroStyles";
+import { createUser } from "../../axios/axiosUser";
+import { setCurrentUser } from "../../redux/user/userSlice";
+import { useDispatch } from "react-redux";
 
 const SignUp = () => {
+  const dispatch = useDispatch();
   return (
     <>
       <Formik
         initialValues={signUpValues}
         validationSchema={validationSignUp}
-        onSubmit={(values, { resetForm }) => {
-          console.log(values);
-          resetForm();
+        onSubmit={async (values, actions) => {
+          const user = await createUser(
+            values.name,
+            values.email,
+            values.password
+          );
+          actions.resetForm();
+          if (user) {
+            dispatch(
+              setCurrentUser({
+                ...user.usuario,
+                token: user.token,
+              })
+            );
+          }
         }}
       >
         <SignUpContainer>

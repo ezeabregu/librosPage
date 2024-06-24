@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BASE_URL } from "../utils";
+import { BASE_URL } from "../utils/constants";
 
 export const createUser = async (name, email, password) => {
   try {
@@ -23,6 +23,6 @@ export const loginUser = async (email, password) => {
     return response.data;
   } catch (error) {
     console.log(error);
-    return alert(error.responde.data.msg);
+    return alert(error.response.data.msg);
   }
 };

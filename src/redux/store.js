@@ -5,17 +5,19 @@ import menuBurgerReducer from "./menuBurger/menuBurgerSlice";
 import storage from "redux-persist/lib/storage";
 import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/lib/persistStore";
+import userReducer from "./user/userSlice";
 
 const reducers = combineReducers({
   destacados: destacadosReducer,
   cart: carritoReducer,
   menuBurger: menuBurgerReducer,
+  user: userReducer,
 });
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["cart"],
+  whitelist: ["cart", "user"],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);

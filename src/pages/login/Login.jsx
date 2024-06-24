@@ -2,15 +2,15 @@ import React from "react";
 import { LoginContainer } from "./loginStyles";
 import { Formik, Field, ErrorMessage } from "formik";
 import { loginValues } from "../../formik/initialValues";
-import { validationLogin } from "../../formik/validation";
+import { validationLogin } from "../../formik/validationSchema";
+import useRedirect from "../../hook/useRedirect";
 import { InputStyled } from "../../components/Formulario/formularioStyles";
 import { ErrorStyled } from "../../components/Formulario/formularioStyles";
 import ButtonForm from "../../components/ButtonForm/ButtonForm";
 import { LinkButton } from "../../components/Hero/heroStyles";
 import { loginUser } from "../../axios/axiosUser";
 import { useDispatch } from "react-redux";
-import { setCurrentUser } from "../../redux/user";
-import useRedirect from "../../hooks/useRedirect";
+import { setCurrentUser } from "../../redux/user/userSlice";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const Login = () => {
           if (user) {
             dispatch(
               setCurrentUser({
-                ...user.user,
+                ...user.usuario,
                 token: user.token,
               })
             );
@@ -35,7 +35,7 @@ const Login = () => {
       >
         <LoginContainer>
           <h2>PAGE</h2>
-          <label>¡El libro que buscás, esta acá!2</label>
+          <label>¡El libro que buscás, esta acá!</label>
           <Field
             name="email"
             type="email"

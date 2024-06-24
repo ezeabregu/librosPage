@@ -16,13 +16,15 @@ import { toggleOcultarCarrito } from "../../redux/carrito/carritoSlice";
 import { useState } from "react";
 
 const Navbar = () => {
+  const { currentUser } = useSelector((state) => state.user);
+  //const currentUser = useSelector((state) => state.user.currentUser);
+  console.log(currentUser.name);
+
   const ocultarCarrito = useSelector((state) => state.cart.hidden);
   const dispatch = useDispatch();
 
   const ocultarMenuBurger = useSelector((state) => state.menuBurger.hidden);
   const [isOpen, setIsOpen] = useState(false);
-
-  const currentUser = useSelector((state) => state.user.currentUser);
 
   return (
     <>
