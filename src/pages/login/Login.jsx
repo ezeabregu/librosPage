@@ -3,7 +3,7 @@ import { LoginContainer } from "./loginStyles";
 import { Formik, Field, ErrorMessage } from "formik";
 import { loginValues } from "../../formik/initialValues";
 import { validationLogin } from "../../formik/validationSchema";
-import useRedirect from "../../hook/useRedirect";
+//import useRedirect from "../../hook/useRedirect";
 import { InputStyled } from "../../components/Formulario/formularioStyles";
 import { ErrorStyled } from "../../components/Formulario/formularioStyles";
 import ButtonForm from "../../components/ButtonForm/ButtonForm";
@@ -14,14 +14,14 @@ import { setCurrentUser } from "../../redux/user/userSlice";
 
 const Login = () => {
   const dispatch = useDispatch();
-  useRedirect("/");
+  //useRedirect("/");
 
   return (
     <>
       <Formik
         initialValues={loginValues}
         validationSchema={validationLogin}
-        onSubmit={async (values) => {
+        onSubmit={async (values, actions) => {
           const user = await loginUser(values.email, values.password);
           if (user) {
             dispatch(
@@ -31,6 +31,7 @@ const Login = () => {
               })
             );
           }
+          actions.resetForm();
         }}
       >
         <LoginContainer>
