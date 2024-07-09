@@ -11,6 +11,7 @@ import { LinkButton } from "../../components/Hero/heroStyles";
 import { loginUser } from "../../axios/axiosUser";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentUser } from "../../redux/user/userSlice";
+import User from "../user/User";
 
 const Login = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
@@ -20,7 +21,7 @@ const Login = () => {
   return (
     <>
       {currentUser ? (
-        <h1>Cerrar sesion</h1>
+        <User />
       ) : (
         <Formik
           initialValues={loginValues}
