@@ -7,8 +7,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleOcultarCarrito } from "../../../redux/carrito/carritoSlice";
 import { toggleOcultarMenuBurger } from "../../../redux/menuBurger/menuBurgerSlice";
 import { useEffect } from "react";
+import { FaUser } from "react-icons/fa";
 
 const MenuBurger = () => {
+  const currentUser = useSelector((state) => state.user.currentUser);
+
   const ocultarCarrito = useSelector((state) => state.cart.hidden);
   const dispatch = useDispatch();
 
@@ -34,7 +37,8 @@ const MenuBurger = () => {
             Contacto
           </NavLinkStyled>
           <NavLinkStyled to="/login" onClick={() => ocultarMenuBurger()}>
-            Ingresá
+            <FaUser />
+            {currentUser ? `${currentUser.name}` : "Ingresá"}
           </NavLinkStyled>
           <CartLinkStyled>
             <CarritoIcono

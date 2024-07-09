@@ -14,6 +14,7 @@ import CarritoIcono from "./CarritoIcono/CarritoIcono";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleOcultarCarrito } from "../../redux/carrito/carritoSlice";
 import { useState } from "react";
+import { FaUser } from "react-icons/fa";
 
 const Navbar = () => {
   //const currentUser = useSelector((state) => state.user.currentUser);
@@ -38,7 +39,10 @@ const Navbar = () => {
           <NavLinkStyled to="/productos">Libros</NavLinkStyled>
           <NavLinkStyled to="/contacto">Contacto</NavLinkStyled>
           <NavLinkStyled to="/login">
-            <span>{currentUser ? `${currentUser.name}` : "Ingresá"}</span>
+            <span>
+              <FaUser />
+              {currentUser ? `${currentUser.name}` : "Ingresá"}
+            </span>
           </NavLinkStyled>
           <CartLinkStyled>
             <CarritoIcono

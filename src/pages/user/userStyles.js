@@ -15,6 +15,11 @@ export const ContentUserAndVerify = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  @media (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
 `;
 
 export const NameUserStyled = styled.h2`
