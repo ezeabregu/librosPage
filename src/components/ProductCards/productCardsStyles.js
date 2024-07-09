@@ -83,6 +83,9 @@ export const InputFormStyled = styled.input`
   border-radius: 7px;
   outline: none;
   border: 1px solid var(--gray);
+  :invalid {
+    border: 2px groove red;
+  }
 `;
 
 export const LinkButton = styled(Link)`

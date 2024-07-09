@@ -20,7 +20,7 @@ const User = () => {
         <NameUserStyled>{`Hola ${currentUser?.name}!!`}</NameUserStyled>
         <VerifyUserStyled>
           <h3>Verificar cuenta?</h3>
-          <InputFormStyled></InputFormStyled>
+          <InputFormStyled minLength={5}></InputFormStyled>
         </VerifyUserStyled>
       </ContentUserAndVerify>
 
