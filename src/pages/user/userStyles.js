@@ -19,13 +19,17 @@ export const ContentUserAndVerify = styled.div`
 
 export const NameUserStyled = styled.h2`
   color: #252525;
+  font-size: 2rem;
 `;
 
-export const VerifyUserStyled = styled.h2`
-  h3 {
-    color: #252525;
-  }
+export const VerifyTextStyled = styled.h2`
+  color: #252525;
+  font-size: 0.8rem;
+`;
+
+export const VerifyUserStyled = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 10px;
 `;
