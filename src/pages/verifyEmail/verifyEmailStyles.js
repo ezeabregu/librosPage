@@ -15,3 +15,7 @@ export const ContainerVerifyStyled = styled.div`
     color: var(--success);
   }
 `;
+
+export const ContainerButton = styled.div`
+  width: 150px;
+`;

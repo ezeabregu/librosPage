@@ -36,3 +36,10 @@ export const validationSignUp = Yup.object({
     .min(6, "La contraseña debe tener al menos 6 caracteres")
     .required("Campo requerido"),
 });
+
+export const validationVerify = Yup.object({
+  name: Yup.string()
+    .trim()
+    .max(6, "Máximo 6 caracteres")
+    .required("Campo requerido"),
+});

@@ -9,6 +9,10 @@ export const ButtonFormStyled = styled.button`
   border: none;
   border-radius: 5px;
   padding: 10px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
   cursor: pointer;
   &:hover {
     opacity: 0.8;

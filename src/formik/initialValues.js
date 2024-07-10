@@ -16,3 +16,7 @@ export const signUpValues = {
   email: "",
   password: "",
 };
+
+export const verifyValues = {
+  code: "",
+};
