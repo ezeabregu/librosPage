@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Form } from "formik";
 
-export const ContainerVerifyStyled = styled.div`
+export const ContainerVerifyStyled = styled(Form)`
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -12,10 +13,6 @@ export const ContainerVerifyStyled = styled.div`
     color: #252525;
   }
   h2 {
-    color: var(--success);
+    color: #279b37;
   }
-`;
-
-export const ContainerButton = styled.div`
-  width: 150px;
 `;
