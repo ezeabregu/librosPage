@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const UserContainerStyled = styled.div`
-  //margin-top: 90px;
+  margin-top: 40px;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -9,7 +9,7 @@ export const UserContainerStyled = styled.div`
   justify-content: center;
   flex-direction: column;
   @media (max-width: 800px) {
-    padding: 1rem;
+    margin-top: 13rem;
   }
 `;
 
@@ -42,13 +42,27 @@ export const VerifyUserStyled = styled.div`
   gap: 10px;
 `;
 
+export const ContainerOrdersStyled = styled.div`
+  width: 80vw;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+`;
+
 export const CheckOutUserStyled = styled.div`
+  width: 600px;
+  height: 300px;
   border: 1px solid var(--moreGray);
   border-radius: 5px;
   color: var(--moreGray);
+  margin: 1.5rem;
   @media (max-width: 800px) {
-    width: 90%;
     padding: 1rem;
     margin: 1rem;
+    width: 95%;
   }
 `;
