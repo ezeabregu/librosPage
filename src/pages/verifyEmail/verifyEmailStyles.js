@@ -15,4 +15,7 @@ export const ContainerVerifyStyled = styled(Form)`
   h2 {
     color: #279b37;
   }
+  @media (max-width: 800px) {
+    padding: 2rem;
+  }
 `;

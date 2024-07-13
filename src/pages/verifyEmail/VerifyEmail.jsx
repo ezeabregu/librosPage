@@ -23,11 +23,11 @@ const VerifyEmail = () => {
         validationSchema={validationVerify}
         onSubmit={async (values, actions) => {
           const user = await verifyUser(currentUser.email, values.code);
-          console.log(currentUser.email, values.code);
           if (user) {
             dispatch(
               setCurrentUser({
                 ...user.usuario,
+                token: user.token,
                 verified: true,
               })
             );

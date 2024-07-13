@@ -29,7 +29,7 @@ export const loginUser = async (email, password) => {
 
 export const verifyUser = async (email, code) => {
   try {
-    const response = await axios.post(`${BASE_URL}/auth/verify`, {
+    const response = await axios.patch(`${BASE_URL}/auth/verify`, {
       email,
       code,
     });
