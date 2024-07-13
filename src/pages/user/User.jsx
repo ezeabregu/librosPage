@@ -4,6 +4,7 @@ import {
   NameUserStyled,
   ContentUserAndVerify,
   VerifyUserStyled,
+  CheckOutUserStyled,
 } from "./userStyles";
 import ButtonDefect from "../../components/ButtonDefect/ButtonDefect";
 import { useDispatch, useSelector } from "react-redux";
@@ -23,7 +24,7 @@ const User = () => {
           <LinkButton to="/verify">¿Verificar cuenta?</LinkButton>
         </VerifyUserStyled>
       </ContentUserAndVerify>
-
+      <CheckOutUserStyled>Orden para checkout</CheckOutUserStyled>
       <ButtonDefect
         onClick={() => {
           dispatch(setCurrentUser(null));

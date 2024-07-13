@@ -8,6 +8,9 @@ export const UserContainerStyled = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  @media (max-width: 800px) {
+    padding: 1rem;
+  }
 `;
 
 export const ContentUserAndVerify = styled.div`
@@ -37,4 +40,15 @@ export const VerifyUserStyled = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 10px;
+`;
+
+export const CheckOutUserStyled = styled.div`
+  border: 1px solid var(--moreGray);
+  border-radius: 5px;
+  color: var(--moreGray);
+  @media (max-width: 800px) {
+    width: 90%;
+    padding: 1rem;
+    margin: 1rem;
+  }
 `;

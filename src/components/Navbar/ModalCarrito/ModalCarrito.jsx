@@ -109,9 +109,9 @@ const ModalCarrito = () => {
               <ButtonDefect
                 onClick={() => {
                   if (window.confirm("Confirmar la compra?") === true) {
-                    navigate("/");
+                    navigate("/login");
                     dispatch(toggleOcultarCarrito());
-                    dispatch(limpiarCarrito());
+                    // dispatch(limpiarCarrito());
                     window.location.reload();
                   }
                 }}
