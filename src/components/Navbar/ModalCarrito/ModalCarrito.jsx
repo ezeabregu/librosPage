@@ -108,12 +108,12 @@ const ModalCarrito = () => {
               <h3>Total: {formatoPrecio(precioTotal + costoEnvio)}</h3>
               <ButtonDefect
                 onClick={() => {
-                  if (window.confirm("Confirmar la compra?") === true) {
-                    navigate("/login");
-                    dispatch(toggleOcultarCarrito());
-                    // dispatch(limpiarCarrito());
-                    window.location.reload();
-                  }
+                  // if (window.confirm("Confirmar la compra?") === true) {
+                  navigate("/login");
+                  dispatch(toggleOcultarCarrito());
+                  // dispatch(limpiarCarrito());
+                  window.location.reload();
+                  // }
                 }}
                 disabled={!cartItems.length}
               >
