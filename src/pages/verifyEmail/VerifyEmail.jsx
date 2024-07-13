@@ -44,7 +44,7 @@ const VerifyEmail = () => {
             <MdVerified />
           </ButtonForm>
           {currentUser.verified === true ? (
-            <h2>Email verificado correctamente</h2>
+            <h2>¡Email verificado correctamente!</h2>
           ) : null}
           <LinkButton to="/login">Atrás</LinkButton>
         </ContainerVerifyStyled>
