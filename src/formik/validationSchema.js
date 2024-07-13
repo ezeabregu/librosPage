@@ -38,7 +38,7 @@ export const validationSignUp = Yup.object({
 });
 
 export const validationVerify = Yup.object({
-  name: Yup.string()
+  code: Yup.string()
     .trim()
     .max(6, "Máximo 6 caracteres")
     .required("Campo requerido"),
