@@ -27,7 +27,6 @@ const User = () => {
       </ContentUserAndVerify>
       <ContainerOrdersStyled>
         <CheckOutUserStyled>Orden para checkout</CheckOutUserStyled>
-        <CheckOutUserStyled>Ordenes historicos</CheckOutUserStyled>
       </ContainerOrdersStyled>
       <ButtonDefect
         onClick={() => {

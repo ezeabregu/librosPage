@@ -9,7 +9,7 @@ export const UserContainerStyled = styled.div`
   justify-content: center;
   flex-direction: column;
   @media (max-width: 800px) {
-    margin-top: 13rem;
+    margin-top: 2rem;
   }
 `;
 
