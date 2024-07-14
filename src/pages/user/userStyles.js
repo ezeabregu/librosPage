@@ -56,8 +56,9 @@ export const ContainerOrdersStyled = styled.div`
 export const CheckOutUserStyled = styled.div`
   width: 600px;
   height: 300px;
-  border: 1px solid var(--moreGray);
-  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: var(--moreGray);
   margin: 1.5rem;
   @media (max-width: 800px) {
@@ -65,4 +66,8 @@ export const CheckOutUserStyled = styled.div`
     margin: 1rem;
     width: 95%;
   }
+`;
+
+export const AccountVerifiedStyled = styled.label`
+  color: var(--success);
 `;

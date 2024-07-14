@@ -6,11 +6,11 @@ import {
   VerifyUserStyled,
   CheckOutUserStyled,
   ContainerOrdersStyled,
+  AccountVerifiedStyled,
 } from "./userStyles";
 import ButtonDefect from "../../components/ButtonDefect/ButtonDefect";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentUser } from "../../redux/user/userSlice";
-
 import { LinkButton } from "../../components/Hero/heroStyles";
 
 const User = () => {
@@ -22,11 +22,17 @@ const User = () => {
       <ContentUserAndVerify>
         <NameUserStyled>{`Hola ${currentUser?.name}!!`}</NameUserStyled>
         <VerifyUserStyled>
-          <LinkButton to="/verify">¿Verificar cuenta?</LinkButton>
+          {currentUser.verified === true ? (
+            <AccountVerifiedStyled>Cuenta verificada</AccountVerifiedStyled>
+          ) : (
+            <LinkButton to="/verify">¿Verificar cuenta?</LinkButton>
+          )}
         </VerifyUserStyled>
       </ContentUserAndVerify>
       <ContainerOrdersStyled>
-        <CheckOutUserStyled>Orden para checkout</CheckOutUserStyled>
+        <CheckOutUserStyled>
+          Aún no has realizado ninguna compra...
+        </CheckOutUserStyled>
       </ContainerOrdersStyled>
       <ButtonDefect
         onClick={() => {
