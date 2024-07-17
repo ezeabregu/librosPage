@@ -6,12 +6,14 @@ import storage from "redux-persist/lib/storage";
 import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/lib/persistStore";
 import userReducer from "./user/userSlice";
+import librosReducer from "./libros/librosSlice";
 
 const reducers = combineReducers({
   destacados: destacadosReducer,
   cart: carritoReducer,
   menuBurger: menuBurgerReducer,
   user: userReducer,
+  libros: librosReducer,
 });
 
 const persistConfig = {

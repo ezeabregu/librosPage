@@ -12,8 +12,11 @@ import Product from "./Product";
 import { INITIAL_LIMIT_BOOKS } from "../../utils/constants";
 import ButtonDefect from "../ButtonDefect/ButtonDefect";
 import { FiDelete } from "react-icons/fi";
+//import { useSelector } from "react-redux";
 
 const ProductsCards = () => {
+  //let librosFromDB = useSelector((state) => state.libros.libros);
+
   const [limit, setLimit] = useState(INITIAL_LIMIT_BOOKS);
 
   let LibrosCopy = {};
