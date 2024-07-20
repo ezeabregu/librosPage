@@ -1,17 +1,18 @@
+import { Form } from "formik";
 import styled from "styled-components";
 
-export const UserContainerStyled = styled.div`
+export const UserContainerStyled = styled(Form)`
   margin-top: 5rem;
-  width: 100vw;
+  padding: 5rem 1rem;
+  width: 100%;
   height: auto;
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  gap: 10px;
   @media (max-width: 800px) {
-    margin-top: 8rem;
-    height: auto;
+    margin-top: 100px;
   }
 `;
 
@@ -47,13 +48,14 @@ export const VerifyUserStyled = styled.div`
 export const ContainerOrdersStyled = styled.div`
   margin: 2rem;
   width: 80vw;
-  height: auto;
+  height: 60vh;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   @media (max-width: 800px) {
     flex-direction: column;
     align-items: center;
+    height: auto;
   }
 `;
 
@@ -84,7 +86,7 @@ export const ContainerWrapperCheckout = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  width: 50%;
+  width: 100px;
   max-height: 400px;
   padding: 1rem;
   overflow: scroll;
@@ -96,12 +98,12 @@ export const ContainerWrapperCheckout = styled.div`
   }
   @media (max-height: 800px) {
     height: auto;
-    width: 80%;
+    width: 100%;
   }
 `;
 
 export const ContainerTotalCheckout = styled.div`
-  height: 150px;
+  height: auto;
   padding: 1rem;
   display: flex;
   flex-direction: column;

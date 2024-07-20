@@ -58,19 +58,17 @@ const User = () => {
               Aún no has realizado ninguna compra...
             </CheckOutUserStyled>
           )}
-          <ContainerTotalCheckout>
-            <ContainerSubtotalStyledCheckout>
-              <h5>Subtotal: {formatoPrecio(precioTotal)}</h5>
-              <h5>Costo de envio: {formatoPrecio(costoEnvio)}</h5>
-            </ContainerSubtotalStyledCheckout>
-            <h3>Total: {formatoPrecio(precioTotal + costoEnvio)}</h3>
-            <label>Ingrese los datos de la tarjeta a continuación</label>
-            <CreditCard />
+          {cartItems.length ? (
+            <ContainerTotalCheckout>
+              <h3>Total: {formatoPrecio(precioTotal + costoEnvio)}</h3>
+              <label>Ingrese los datos de la tarjeta a continuación</label>
+              <CreditCard />
 
-            <LinkButton to="" style={{ backgroundColor: "#252525" }}>
-              Finalizar compra
-            </LinkButton>
-          </ContainerTotalCheckout>
+              <LinkButton to="" style={{ backgroundColor: "#252525" }}>
+                Finalizar compra
+              </LinkButton>
+            </ContainerTotalCheckout>
+          ) : null}
         </ContainerOrdersStyled>
         <ButtonDefect
           onClick={() => {
