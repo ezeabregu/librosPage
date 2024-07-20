@@ -118,6 +118,9 @@ export const ContainerTotalCheckout = styled.div`
     color: #252525;
     font-size: 0.6rem;
   }
+  @media (max-height: 800px) {
+    width: 100%;
+  }
 `;
 
 export const ContainerSubtotalStyledCheckout = styled.div`

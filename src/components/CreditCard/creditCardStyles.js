@@ -1,6 +1,7 @@
+import { Form } from "formik";
 import styled from "styled-components";
 
-export const ContainerCreditCardStyled = styled.div`
+export const ContainerCreditCardStyled = styled(Form)`
   width: 100%;
   height: auto;
   padding: 1rem;
@@ -22,6 +23,7 @@ export const cardNumberStyled = styled.input`
   border: 0.5px solid black;
   height: auto;
   padding: 10px;
+  color: #252525;
 `;
 
 export const cardSecutiryNumberStyled = styled.input`
@@ -30,6 +32,7 @@ export const cardSecutiryNumberStyled = styled.input`
   height: auto;
   padding: 10px;
   width: 100px;
+  color: #252525;
 `;
 
 export const ContainerDataCardTotal = styled.div`
@@ -41,4 +44,18 @@ export const ContainerDataCardTotal = styled.div`
 export const ContainerDataCard = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+`;
+
+export const ContainerDataCardNumber = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`;
+
+export const ContainerCardCompany = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
 `;

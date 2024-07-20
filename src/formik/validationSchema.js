@@ -43,3 +43,21 @@ export const validationVerify = Yup.object({
     .max(6, "Máximo 6 caracteres")
     .required("Campo requerido"),
 });
+
+export const validationCard = Yup.object({
+  numberCard: Yup.number()
+    .max(16, "Máximo 16 caracteres")
+    .required("Campo requerido"),
+  expirationCard: Yup.string().required("Campo requerido"),
+  codeCard: Yup.number()
+    .min(3, "Mínimo tres caracteres")
+    .max(4, "Máximo cuatro caracteres")
+    .required("Campo requerido"),
+});
+
+export const validationBuy = Yup.object({
+  name: Yup.string().required("Campo requerido"),
+  cellphone: Yup.string().required("Campo requerido"),
+  location: Yup.string().required("Campo requerido"),
+  address: Yup.string().required("Campo requerido"),
+});

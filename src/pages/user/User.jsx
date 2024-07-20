@@ -9,7 +9,6 @@ import {
   AccountVerifiedStyled,
   ContainerWrapperCheckout,
   ContainerTotalCheckout,
-  ContainerSubtotalStyledCheckout,
 } from "./userStyles";
 import ButtonDefect from "../../components/ButtonDefect/ButtonDefect";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,8 +16,16 @@ import { setCurrentUser } from "../../redux/user/userSlice";
 import { LinkButton } from "../../components/Hero/heroStyles";
 import TarjetaLibro from "../../components/Navbar/ModalCarrito/TarjetaLibro";
 import { formatoPrecio } from "../../utils/formatoPrecio";
-import { Formik, Field, ErrorMessage } from "formik";
-import CreditCard from "../../components/CreditCard/CreditCard";
+import { ErrorMessage, Formik, Field } from "formik";
+// import CreditCard from "../../components/CreditCard/CreditCard";
+import { limpiarCarrito } from "../../redux/carrito/carritoSlice";
+import {
+  ErrorStyled,
+  InputStyled,
+} from "../../components/Formulario/formularioStyles";
+import { buyValues } from "../../formik/initialValues";
+import { validationBuy } from "../../formik/validationSchema";
+import ButtonForm from "../../components/ButtonForm/ButtonForm";
 
 const User = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
@@ -29,8 +36,24 @@ const User = () => {
     return (acc += item.price * item.cantidad);
   }, 0);
 
+  const total = precioTotal + costoEnvio;
+
   return (
-    <Formik>
+    <Formik
+      initialValues={buyValues}
+      validationSchema={validationBuy}
+      onSubmit={async (values, actions) => {
+        console.log(
+          values.name,
+          values.cellphone,
+          values.location,
+          values.address,
+          total,
+          cartItems
+        );
+        actions.resetForm();
+      }}
+    >
       <UserContainerStyled>
         <ContentUserAndVerify>
           <NameUserStyled>{`Hola ${currentUser?.name}!!`}</NameUserStyled>
@@ -61,18 +84,61 @@ const User = () => {
           {cartItems.length ? (
             <ContainerTotalCheckout>
               <h3>Total: {formatoPrecio(precioTotal + costoEnvio)}</h3>
-              <label>Ingrese los datos de la tarjeta a continuación</label>
-              <CreditCard />
+              {/* <label>Ingrese los datos de la tarjeta a continuación</label>
+              <CreditCard /> */}
 
-              <LinkButton to="" style={{ backgroundColor: "#252525" }}>
-                Finalizar compra
-              </LinkButton>
+              <Field
+                name="name"
+                type="string"
+                id="name"
+                placeholder="Nombre - Apellido"
+                as={InputStyled}
+              ></Field>
+              <ErrorMessage name="name" component={ErrorStyled}></ErrorMessage>
+
+              <Field
+                name="cellphone"
+                type="number"
+                id="cellphone"
+                placeholder="+549 xxx xxx xxx"
+                as={InputStyled}
+              ></Field>
+              <ErrorMessage
+                name="cellphone"
+                component={ErrorStyled}
+              ></ErrorMessage>
+
+              <Field
+                name="location"
+                type="string"
+                id="location"
+                placeholder="Localidad"
+                as={InputStyled}
+              ></Field>
+              <ErrorMessage
+                name="location"
+                component={ErrorStyled}
+              ></ErrorMessage>
+
+              <Field
+                name="address"
+                type="string"
+                id="address"
+                placeholder="Dirección"
+                as={InputStyled}
+              ></Field>
+              <ErrorMessage
+                name="address"
+                component={ErrorStyled}
+              ></ErrorMessage>
+              <ButtonForm>Finalizar compra</ButtonForm>
             </ContainerTotalCheckout>
           ) : null}
         </ContainerOrdersStyled>
         <ButtonDefect
           onClick={() => {
             dispatch(setCurrentUser(null));
+            dispatch(limpiarCarrito());
           }}
         >
           Cerrar sesión
