@@ -28,9 +28,9 @@ export const borrarCarrito = (cartItems, id) => {
   });
 };
 
-export const resetCostoEnvio = (cartItems, costoEnvio) => {
+export const resetCostoEnvio = (cartItems, shippingCost) => {
   if (cartItems.length === 1 && cartItems[0].cantidad === 1) {
     return 0;
   }
-  return costoEnvio;
+  return shippingCost;
 };

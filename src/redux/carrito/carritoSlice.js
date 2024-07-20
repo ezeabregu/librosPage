@@ -4,7 +4,7 @@ import { SHIPPING_COST } from "../../utils/constants";
 
 const INITIAL_STATE = {
   cartItems: [],
-  costoEnvio: 0,
+  shippingCost: 0,
   hidden: true,
 };
 
@@ -16,18 +16,18 @@ const carritoSlice = createSlice({
       return {
         ...state,
         cartItems: agregarCarrito(state.cartItems, action.payload),
-        costoEnvio: SHIPPING_COST,
+        shippingCost: SHIPPING_COST,
       };
     },
     borrar: (state, action) => {
       return {
         ...state,
         cartItems: borrarCarrito(state.cartItems, action.payload),
-        costoEnvio: resetCostoEnvio(state.cartItems, SHIPPING_COST),
+        shippingCost: resetCostoEnvio(state.cartItems, SHIPPING_COST),
       };
     },
     limpiarCarrito: (state) => {
-      return { ...state, cartItems: [], costoEnvio: 0 };
+      return { ...state, cartItems: [], shippingCost: 0 };
     },
     toggleOcultarCarrito: (state) => {
       return { ...state, hidden: !state.hidden };

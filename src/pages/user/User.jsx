@@ -30,14 +30,14 @@ import { createOrder } from "../../axios/axiosOrder";
 
 const User = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
-  const { cartItems, costoEnvio } = useSelector((state) => state.cart);
+  const { cartItems, shippingCost } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   const price = cartItems.reduce((acc, item) => {
     return (acc += item.price * item.cantidad);
   }, 0);
 
-  const total = price + costoEnvio;
+  const total = price + shippingCost;
 
   return (
     <Formik
@@ -47,7 +47,7 @@ const User = () => {
         const orderData = {
           items: cartItems,
           price,
-          costoEnvio,
+          shippingCost,
           total,
           shippingDetails: { ...values },
         };
@@ -88,7 +88,7 @@ const User = () => {
           )}
           {cartItems.length ? (
             <ContainerTotalCheckout>
-              <h3>Total: {formatoPrecio(price + costoEnvio)}</h3>
+              <h3>Total: {formatoPrecio(price + shippingCost)}</h3>
               {/* <label>Ingrese los datos de la tarjeta a continuación</label>
               <CreditCard /> */}
 
