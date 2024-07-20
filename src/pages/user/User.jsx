@@ -26,6 +26,7 @@ import {
 import { buyValues } from "../../formik/initialValues";
 import { validationBuy } from "../../formik/validationSchema";
 import ButtonForm from "../../components/ButtonForm/ButtonForm";
+import { createOrder } from "../../axios/axiosOrder";
 
 const User = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
@@ -42,16 +43,14 @@ const User = () => {
     <Formik
       initialValues={buyValues}
       validationSchema={validationBuy}
-      onSubmit={async (values, actions) => {
-        console.log(
-          values.name,
-          values.cellphone,
-          values.location,
-          values.address,
-          total,
-          cartItems
-        );
-        actions.resetForm();
+      onSubmit={async (values) => {
+        const orderData = { items: cartItems, costoEnvio, total };
+        try {
+          await createOrder(orderData, dispatch, currentUser);
+          dispatch(limpiarCarrito());
+        } catch (error) {
+          alert("Error al intentar crear la orden!");
+        }
       }}
     >
       <UserContainerStyled>
