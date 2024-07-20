@@ -33,11 +33,11 @@ const User = () => {
   const { cartItems, costoEnvio } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
-  const precioTotal = cartItems.reduce((acc, item) => {
+  const price = cartItems.reduce((acc, item) => {
     return (acc += item.price * item.cantidad);
   }, 0);
 
-  const total = precioTotal + costoEnvio;
+  const total = price + costoEnvio;
 
   return (
     <Formik
@@ -46,7 +46,7 @@ const User = () => {
       onSubmit={async (values) => {
         const orderData = {
           items: cartItems,
-          precioTotal,
+          price,
           costoEnvio,
           total,
           shippingDetails: { ...values },
@@ -88,7 +88,7 @@ const User = () => {
           )}
           {cartItems.length ? (
             <ContainerTotalCheckout>
-              <h3>Total: {formatoPrecio(precioTotal + costoEnvio)}</h3>
+              <h3>Total: {formatoPrecio(price + costoEnvio)}</h3>
               {/* <label>Ingrese los datos de la tarjeta a continuación</label>
               <CreditCard /> */}
 
