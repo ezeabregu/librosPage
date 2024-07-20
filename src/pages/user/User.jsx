@@ -44,7 +44,13 @@ const User = () => {
       initialValues={buyValues}
       validationSchema={validationBuy}
       onSubmit={async (values) => {
-        const orderData = { items: cartItems, costoEnvio, total };
+        const orderData = {
+          items: cartItems,
+          precioTotal,
+          costoEnvio,
+          total,
+          shippingDetails: { ...values },
+        };
         try {
           await createOrder(orderData, dispatch, currentUser);
           dispatch(limpiarCarrito());
