@@ -15,7 +15,7 @@ import { FaMinus } from "react-icons/fa";
 import { IoMdTrash } from "react-icons/io";
 import { BsPlusLg } from "react-icons/bs";
 
-const TarjetaLibro = ({ img, title, id, price, quantity }) => {
+const TarjetaLibro = ({ img, title, id, price, cantidad }) => {
   const dispatch = useDispatch();
 
   return (
@@ -30,9 +30,9 @@ const TarjetaLibro = ({ img, title, id, price, quantity }) => {
           bgColor="var(--btn-gradient-secondary)"
           onClick={() => dispatch(borrar(id))}
         >
-          {quantity === 1 ? <IoMdTrash /> : <FaMinus />}
+          {cantidad === 1 ? <IoMdTrash /> : <FaMinus />}
         </Incrementar>
-        <Contador>{quantity}</Contador>
+        <Contador>{cantidad}</Contador>
         <Incrementar
           onClick={() => dispatch(agregar({ img, title, price, id }))}
         >
