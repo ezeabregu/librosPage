@@ -8,7 +8,7 @@ const CarritoIcono = () => {
   const dispatch = useDispatch();
 
   const totalCartItems = useSelector((state) => state.cart.cartItems).reduce(
-    (acc, item) => (acc += item.cantidad),
+    (acc, item) => (acc += item.quantity),
     0
   );
 
