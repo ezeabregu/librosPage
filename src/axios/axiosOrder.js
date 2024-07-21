@@ -28,6 +28,7 @@ export const createOrder = async (order, dispatch, currentUser) => {
       headers: { "x-token": currentUser.token },
       order,
     });
+    console.log(currentUser.token);
     if (response) {
       getOrders(dispatch, currentUser);
     }
