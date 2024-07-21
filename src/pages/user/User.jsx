@@ -26,7 +26,7 @@ import { createOrder } from "../../axios/axiosOrder";
 import ProductsCheckout from "../../components/Formulario/Products/ProductsCheckout";
 
 const User = ({ cartItems, shippingCost }) => {
-  const currentUser = useSelector((state) => state.user.currentUser);
+  const { currentUser } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   const price = cartItems.reduce((acc, item) => {
@@ -39,11 +39,11 @@ const User = ({ cartItems, shippingCost }) => {
       validationSchema={validationBuy}
       onSubmit={async (values) => {
         const orderData = {
-          items: cartItems,
           price,
           shippingCost,
           total: price + shippingCost,
           shippingDetails: { ...values },
+          items: cartItems,
         };
         console.log(orderData);
         try {
@@ -80,7 +80,7 @@ const User = ({ cartItems, shippingCost }) => {
                 name="name"
                 type="string"
                 id="name"
-                placeholder="Nombre - Apellido"
+                placeholder="Nombre Apellido"
                 as={InputStyled}
               ></Field>
               <ErrorMessage name="name" component={ErrorStyled}></ErrorMessage>
