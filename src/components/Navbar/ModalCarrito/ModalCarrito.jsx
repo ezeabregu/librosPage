@@ -29,7 +29,7 @@ import { useNavigate } from "react-router-dom";
 
 const ModalCarrito = () => {
   const ocultarCarrito = useSelector((state) => state.cart.hidden);
-  const { cartItems, costoEnvio } = useSelector((state) => state.cart);
+  const { cartItems, shippingCost } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
@@ -103,9 +103,9 @@ const ModalCarrito = () => {
             <ContainerTotal>
               <ContainerSubtotalStyled>
                 <h5>Subtotal: {formatoPrecio(precioTotal)}</h5>
-                <h5>Costo de envio: {formatoPrecio(costoEnvio)}</h5>
+                <h5>Costo de envio: {formatoPrecio(shippingCost)}</h5>
               </ContainerSubtotalStyled>
-              <h3>Total: {formatoPrecio(precioTotal + costoEnvio)}</h3>
+              <h3>Total: {formatoPrecio(precioTotal + shippingCost)}</h3>
               <ButtonDefect
                 onClick={() => {
                   // if (window.confirm("Confirmar la compra?") === true) {

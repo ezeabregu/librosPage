@@ -15,13 +15,14 @@ import User from "../user/User";
 
 const Login = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
+  const { cartItems, shippingCost } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   //useRedirect("/");
 
   return (
     <>
       {currentUser ? (
-        <User />
+        <User cartItems={cartItems} shippingCost={shippingCost} />
       ) : (
         <Formik
           initialValues={loginValues}

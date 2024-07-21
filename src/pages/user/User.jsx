@@ -4,18 +4,14 @@ import {
   NameUserStyled,
   ContentUserAndVerify,
   VerifyUserStyled,
-  CheckOutUserStyled,
   ContainerOrdersStyled,
   AccountVerifiedStyled,
-  ContainerWrapperCheckout,
   ContainerTotalCheckout,
 } from "./userStyles";
 import ButtonDefect from "../../components/ButtonDefect/ButtonDefect";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentUser } from "../../redux/user/userSlice";
 import { LinkButton } from "../../components/Hero/heroStyles";
-import TarjetaLibro from "../../components/Navbar/ModalCarrito/TarjetaLibro";
-import { formatoPrecio } from "../../utils/formatoPrecio";
 import { ErrorMessage, Formik, Field } from "formik";
 // import CreditCard from "../../components/CreditCard/CreditCard";
 import { limpiarCarrito } from "../../redux/carrito/carritoSlice";
@@ -27,19 +23,15 @@ import { buyValues } from "../../formik/initialValues";
 import { validationBuy } from "../../formik/validationSchema";
 import ButtonForm from "../../components/ButtonForm/ButtonForm";
 import { createOrder } from "../../axios/axiosOrder";
+import ProductsCheckout from "../../components/Formulario/Products/ProductsCheckout";
 
-const User = () => {
+const User = ({ cartItems, shippingCost }) => {
   const currentUser = useSelector((state) => state.user.currentUser);
-  const { cartItems, shippingCost } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   const price = cartItems.reduce((acc, item) => {
     return (acc += item.price * item.cantidad);
   }, 0);
-
-  const total = price + shippingCost;
-
-  console.log(currentUser.token);
 
   return (
     <Formik
@@ -50,7 +42,7 @@ const User = () => {
           items: cartItems,
           price,
           shippingCost,
-          total,
+          total: price + shippingCost,
           shippingDetails: { ...values },
         };
         try {
@@ -73,27 +65,16 @@ const User = () => {
           </VerifyUserStyled>
         </ContentUserAndVerify>
         <ContainerOrdersStyled>
-          {cartItems.length ? (
-            <>
-              <ContainerWrapperCheckout>
-                {cartItems.length
-                  ? cartItems.map((item) => {
-                      return <TarjetaLibro {...item} key={item.id} />;
-                    })
-                  : null}
-              </ContainerWrapperCheckout>
-            </>
-          ) : (
-            <CheckOutUserStyled>
-              Aún no has realizado ninguna compra...
-            </CheckOutUserStyled>
-          )}
+          <ProductsCheckout
+            cartItems={cartItems}
+            shippingCost={shippingCost}
+            price={price}
+          />
           {cartItems.length ? (
             <ContainerTotalCheckout>
-              <h3>Total: {formatoPrecio(price + shippingCost)}</h3>
               {/* <label>Ingrese los datos de la tarjeta a continuación</label>
               <CreditCard /> */}
-
+              <label>Ingrese los siguientes datos:</label>
               <Field
                 name="name"
                 type="string"
