@@ -39,6 +39,8 @@ const User = () => {
 
   const total = price + shippingCost;
 
+  console.log(currentUser.token);
+
   return (
     <Formik
       initialValues={buyValues}
