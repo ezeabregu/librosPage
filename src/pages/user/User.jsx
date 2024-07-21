@@ -90,7 +90,7 @@ const User = ({ cartItems, shippingCost }) => {
 
               <Field
                 name="cellphone"
-                type="number"
+                type="string"
                 id="cellphone"
                 placeholder="+549 xxx xxx xxx"
                 as={InputStyled}
