@@ -24,10 +24,13 @@ import { validationBuy } from "../../formik/validationSchema";
 import ButtonForm from "../../components/ButtonForm/ButtonForm";
 import { createOrder } from "../../axios/axiosOrder";
 import ProductsCheckout from "../../components/Formulario/Products/ProductsCheckout";
+import { clearOrders } from "../../redux/orders/ordersSlice";
+import { useNavigate } from "react-router-dom";
 
 const User = ({ cartItems, shippingCost }) => {
   const { currentUser } = useSelector((state) => state.user);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const price = cartItems.reduce((acc, item) => {
     return (acc += item.price * item.cantidad);
@@ -128,6 +131,8 @@ const User = ({ cartItems, shippingCost }) => {
           onClick={() => {
             dispatch(setCurrentUser(null));
             dispatch(limpiarCarrito());
+            dispatch(clearOrders());
+            navigate("/");
           }}
         >
           Cerrar sesión
