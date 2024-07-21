@@ -41,7 +41,7 @@ const ModalCarrito = () => {
   }, [dispatch]);
 
   const precioTotal = cartItems.reduce((acc, item) => {
-    return (acc += item.price * item.cantidad);
+    return (acc += item.price * item.quantity);
   }, 0);
 
   return (
