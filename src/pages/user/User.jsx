@@ -45,6 +45,7 @@ const User = ({ cartItems, shippingCost }) => {
           total: price + shippingCost,
           shippingDetails: { ...values },
         };
+        console.log(orderData);
         try {
           await createOrder(orderData, dispatch, currentUser);
           dispatch(limpiarCarrito());

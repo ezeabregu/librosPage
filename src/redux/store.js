@@ -7,6 +7,7 @@ import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/lib/persistStore";
 import userReducer from "./user/userSlice";
 import librosReducer from "./libros/librosSlice";
+import ordersReducer from "./orders/ordersSlice";
 
 const reducers = combineReducers({
   destacados: destacadosReducer,
@@ -14,6 +15,7 @@ const reducers = combineReducers({
   menuBurger: menuBurgerReducer,
   user: userReducer,
   libros: librosReducer,
+  orders: ordersReducer,
 });
 
 const persistConfig = {
@@ -26,6 +28,8 @@ const persistedReducer = persistReducer(persistConfig, reducers);
 
 export const store = configureStore({
   reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({ serializableCheck: false }),
 });
 
 export const persistor = persistStore(store);
