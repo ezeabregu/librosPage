@@ -2,7 +2,7 @@ import React from "react";
 import { ContainerVerifyStyled } from "./verifyEmailStyles";
 import { LinkButton } from "../../components/Hero/heroStyles";
 import { InputStyled } from "../../components/Formulario/formularioStyles";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ButtonForm from "../../components/ButtonForm/ButtonForm";
 import { MdVerified } from "react-icons/md";
 import { Formik, ErrorMessage, Field } from "formik";
@@ -13,8 +13,10 @@ import { verifyUser } from "../../axios/axiosUser";
 import { ErrorStyled } from "../../components/Formulario/formularioStyles";
 
 const VerifyEmail = () => {
-  const currentUser = useSelector((state) => state.user.currentUser);
+  const { currentUser } = useSelector((state) => state.user);
   const dispatch = useDispatch();
+
+  console.log(currentUser.name);
 
   return (
     <>
@@ -27,7 +29,7 @@ const VerifyEmail = () => {
             dispatch(
               setCurrentUser({
                 ...user.usuario,
-                token: user.token,
+                //token: user.token,
                 verified: true,
               })
             );
@@ -36,6 +38,7 @@ const VerifyEmail = () => {
         }}
       >
         <ContainerVerifyStyled>
+          <label>{currentUser ? currentUser.name : null}</label>
           <label>Ingrese el código enviado a su casilla de correo:</label>
           <Field name="code" type="text" id="code" as={InputStyled}></Field>
           <ErrorMessage name="code" component={ErrorStyled} />

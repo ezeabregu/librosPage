@@ -10,9 +10,12 @@ import { LinkButton } from "../../components/Hero/heroStyles";
 import { createUser } from "../../axios/axiosUser";
 import { setCurrentUser } from "../../redux/user/userSlice";
 import { useDispatch } from "react-redux";
+import useRedirect from "../../hook/useRedirect";
 
 const SignUp = () => {
   const dispatch = useDispatch();
+  useRedirect("/login");
+
   return (
     <>
       <Formik
@@ -67,6 +70,7 @@ const SignUp = () => {
             privacidad y la Política de cookies.
           </p>
           <ButtonForm>Registrate</ButtonForm>
+
           <h3>¿Tienes una cuenta?</h3>
           <LinkButton to="/login">Inicia sesión</LinkButton>
         </SignUpContainer>
