@@ -31,7 +31,7 @@ const User = ({ cartItems, shippingCost }) => {
   const { currentUser } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  console.log(currentUser);
   const price = cartItems.reduce((acc, item) => {
     return (acc += item.price * item.quantity);
   }, 0);
@@ -48,7 +48,6 @@ const User = ({ cartItems, shippingCost }) => {
           shippingDetails: { ...values },
           items: cartItems,
         };
-        console.log(orderData);
         try {
           await createOrder(orderData, dispatch, currentUser);
           dispatch(limpiarCarrito());
@@ -123,7 +122,11 @@ const User = ({ cartItems, shippingCost }) => {
                 name="address"
                 component={ErrorStyled}
               ></ErrorMessage>
-              <ButtonForm>Finalizar compra</ButtonForm>
+              {currentUser.verified === true ? (
+                <ButtonForm>Finalizar compra</ButtonForm>
+              ) : (
+                <label>Debes verificar la cuenta para comprar!</label>
+              )}
             </ContainerTotalCheckout>
           ) : null}
         </ContainerOrdersStyled>

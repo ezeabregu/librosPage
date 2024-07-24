@@ -13,10 +13,8 @@ import { verifyUser } from "../../axios/axiosUser";
 import { ErrorStyled } from "../../components/Formulario/formularioStyles";
 
 const VerifyEmail = () => {
-  const { currentUser } = useSelector((state) => state.user);
+  const currentUser = useSelector((state) => state.user.currentUser);
   const dispatch = useDispatch();
-
-  console.log(currentUser.name);
 
   return (
     <>

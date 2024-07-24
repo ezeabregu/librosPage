@@ -43,4 +43,8 @@ export const ContainerTotalCheckout = styled.div`
   span {
     color: var(--moreGray);
   }
+  label {
+    font-weight: 700;
+    color: var(--rojo);
+  }
 `;
