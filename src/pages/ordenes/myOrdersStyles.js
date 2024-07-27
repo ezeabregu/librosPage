@@ -2,11 +2,14 @@ import styled from "styled-components";
 
 export const ContainerMyOrders = styled.div`
   width: 100vw;
-  max-height: 1300px;
+  max-width: 1300px;
   margin-top: 90px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 800px) {
+    min-height: 100vh;
+  }
 `;
 
 export const TituloMyOrders = styled.h2`
