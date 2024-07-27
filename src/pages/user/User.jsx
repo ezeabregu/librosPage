@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   UserContainerStyled,
   NameUserStyled,
@@ -8,6 +8,7 @@ import {
   AccountVerifiedStyled,
   ContainerTotalCheckout,
   TitleCheckOut,
+  Loading,
 } from "./userStyles";
 import ButtonDefect from "../../components/ButtonDefect/ButtonDefect";
 import { useDispatch, useSelector } from "react-redux";
@@ -37,11 +38,14 @@ const User = ({ cartItems, shippingCost }) => {
     return (acc += item.price * item.quantity);
   }, 0);
 
+  const [isLoading, setIsLoading] = useState(false);
+
   return (
     <Formik
       initialValues={buyValues}
       validationSchema={validationBuy}
       onSubmit={async (values) => {
+        setIsLoading(true);
         const orderData = {
           price,
           shippingCost,
@@ -55,12 +59,14 @@ const User = ({ cartItems, shippingCost }) => {
         } catch (error) {
           alert("Error al intentar crear la orden!");
         }
+        setIsLoading(false);
       }}
     >
       <UserContainerStyled>
         <ContentUserAndVerify>
           <NameUserStyled>{`Hola ${currentUser?.name}!!`}</NameUserStyled>
           <VerifyUserStyled>
+            <LinkButton to="/myorders">Mis órdenes</LinkButton>
             {currentUser.verified === true ? (
               <AccountVerifiedStyled>Cuenta verificada</AccountVerifiedStyled>
             ) : (
@@ -123,10 +129,16 @@ const User = ({ cartItems, shippingCost }) => {
                 name="address"
                 component={ErrorStyled}
               ></ErrorMessage>
-              {currentUser.verified === true ? (
-                <ButtonForm>Finalizar compra</ButtonForm>
+              {isLoading ? (
+                <Loading>
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </Loading>
               ) : (
-                <label>Debes verificar la cuenta para comprar!</label>
+                <ButtonForm disabled={!cartItems.length}>
+                  Finalizar compra
+                </ButtonForm>
               )}
             </ContainerTotalCheckout>
           ) : null}

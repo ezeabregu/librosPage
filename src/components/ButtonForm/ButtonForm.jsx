@@ -1,10 +1,12 @@
 import React from "react";
 import { ButtonFormStyled } from "./buttonFormStyles";
 
-const ButtonForm = ({ children }) => {
+const ButtonForm = ({ children, disabled }) => {
   return (
     <>
-      <ButtonFormStyled type="submit">{children}</ButtonFormStyled>
+      <ButtonFormStyled type="submit" disabled={disabled}>
+        {children}
+      </ButtonFormStyled>
     </>
   );
 };

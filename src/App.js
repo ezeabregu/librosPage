@@ -13,6 +13,7 @@ import { ModalStyled } from "./components/UI/Modal/modalStyles";
 import Login from "./pages/login/Login";
 import SignUp from "./pages/signUp/SignUp";
 import VerifyEmail from "./pages/verifyEmail/VerifyEmail";
+import MyOrders from "./pages/ordenes/MyOrders";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="register" element={<SignUp />} />
         <Route path="verify" element={<VerifyEmail />} />
+        <Route path="myorders" element={<MyOrders />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
       <ModalStyled />;

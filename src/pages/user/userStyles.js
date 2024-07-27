@@ -133,3 +133,42 @@ export const TitleCheckOut = styled.label`
   color: var(--black);
   font-size: 1rem;
 `;
+
+export const Loading = styled.div`
+  margin: 10px 0;
+  background-color: var(--rojo);
+  font-weight: 600;
+  font-size: 16px;
+  width: 155px;
+  min-height: 35px;
+  border-radius: 5px;
+  text-align: center;
+  span {
+    color: var(--WalterWhite);
+    animation: loading 2s infinite;
+    font-size: 25px;
+  }
+  span:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  span:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+
+  span:nth-child(3) {
+    animation-delay: 1s;
+  }
+  @keyframes loading {
+    0%,
+    20%,
+    80%,
+    100% {
+      opacity: 0;
+    }
+    40%,
+    60% {
+      opacity: 1;
+    }
+  }
+`;

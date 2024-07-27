@@ -8,6 +8,7 @@ export const GlobalStyles = createGlobalStyle`
          --moreGray: #6d6e70;
          --success: #279b37;
          --black: #252525;
+         --WalterWhite:#fefefe;
     }
     html{
         scroll-behavior: smooth;
