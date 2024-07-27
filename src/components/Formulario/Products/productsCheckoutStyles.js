@@ -37,14 +37,28 @@ export const CheckOutUserStyled = styled.div`
 `;
 
 export const ContainerTotalCheckout = styled.div`
+  padding: 1rem;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  p,
+  gap: 10px;
+  p {
+    color: var(--black);
+    font-size: 1.2rem;
+  }
   span {
     color: var(--moreGray);
   }
-  label {
-    font-weight: 700;
-    color: var(--rojo);
-  }
+`;
+
+export const Separador = styled.div`
+  width: 100%;
+  height: 10px;
+  border-bottom: solid 1px var(--moreGray);
+`;
+
+export const TituloSubtotal = styled.span`
+  font-size: 0.7rem;
+  color: aliceblue;
 `;

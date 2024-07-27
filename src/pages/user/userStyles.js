@@ -104,7 +104,7 @@ export const ContainerWrapperCheckout = styled.div`
 
 export const ContainerTotalCheckout = styled.div`
   height: auto;
-  padding: 1rem;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -113,10 +113,6 @@ export const ContainerTotalCheckout = styled.div`
   h5,
   h3 {
     color: #252525;
-  }
-  label {
-    color: #252525;
-    font-size: 0.6rem;
   }
   @media (max-height: 800px) {
     width: 100%;
@@ -131,4 +127,9 @@ export const ContainerSubtotalStyledCheckout = styled.div`
   h3 {
     color: var(--moreGray);
   }
+`;
+
+export const TitleCheckOut = styled.label`
+  color: var(--black);
+  font-size: 1rem;
 `;

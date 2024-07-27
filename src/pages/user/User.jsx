@@ -7,6 +7,7 @@ import {
   ContainerOrdersStyled,
   AccountVerifiedStyled,
   ContainerTotalCheckout,
+  TitleCheckOut,
 } from "./userStyles";
 import ButtonDefect from "../../components/ButtonDefect/ButtonDefect";
 import { useDispatch, useSelector } from "react-redux";
@@ -77,7 +78,7 @@ const User = ({ cartItems, shippingCost }) => {
             <ContainerTotalCheckout>
               {/* <label>Ingrese los datos de la tarjeta a continuación</label>
               <CreditCard /> */}
-              <label>Ingrese los siguientes datos:</label>
+              <TitleCheckOut>Ingrese los siguientes datos:</TitleCheckOut>
               <Field
                 name="name"
                 type="string"

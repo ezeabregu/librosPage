@@ -7,6 +7,7 @@ export const GlobalStyles = createGlobalStyle`
          --gray: #e2e2e2;
          --moreGray: #6d6e70;
          --success: #279b37;
+         --black: #252525;
     }
     html{
         scroll-behavior: smooth;

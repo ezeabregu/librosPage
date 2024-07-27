@@ -3,6 +3,8 @@ import {
   ContainerWrapperCheckout,
   CheckOutUserStyled,
   ContainerTotalCheckout,
+  Separador,
+  TituloSubtotal,
 } from "./productsCheckoutStyles";
 import TarjetaLibro from "../../Navbar/ModalCarrito/TarjetaLibro";
 import { formatoPrecio } from "../../../utils/formatoPrecio";
@@ -20,11 +22,12 @@ const ProductsCheckout = ({ cartItems, shippingCost, price }) => {
               : null}
           </ContainerWrapperCheckout>
           <ContainerTotalCheckout>
-            <p>Subtotal:</p>
+            <TituloSubtotal>Subtotal:</TituloSubtotal>
             <span>{formatoPrecio(price)}</span>
-            <p>Costo de envío:</p>
+            <TituloSubtotal>Costo de envío:</TituloSubtotal>
             <span>{formatoPrecio(shippingCost)}</span>
-            <p>Subtotal:</p>
+            <Separador></Separador>
+            <p>Total:</p>
             <span>{formatoPrecio(price + shippingCost)}</span>
           </ContainerTotalCheckout>
         </>
