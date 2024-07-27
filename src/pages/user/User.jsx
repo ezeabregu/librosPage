@@ -31,7 +31,7 @@ const User = ({ cartItems, shippingCost }) => {
   const { currentUser } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log(currentUser);
+
   const price = cartItems.reduce((acc, item) => {
     return (acc += item.price * item.quantity);
   }, 0);

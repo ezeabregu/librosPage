@@ -27,7 +27,7 @@ const VerifyEmail = () => {
             dispatch(
               setCurrentUser({
                 ...user.usuario,
-                //token: user.token,
+                token: user.token,
                 verified: true,
               })
             );
