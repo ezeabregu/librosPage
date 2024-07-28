@@ -6,13 +6,24 @@ import {
   Pending,
   Check,
   ContainerNoOrder,
+  Loading,
 } from "./cardsOrdersStyles";
 import { useSelector } from "react-redux";
 import { formatoPrecio } from "../../utils/formatoPrecio";
 import { formatoFecha } from "../../utils/formatoFecha";
 
 const CardsOrders = () => {
-  const { orders, error } = useSelector((state) => state.orders);
+  const { orders, loading, error } = useSelector((state) => state.orders);
+
+  if (loading && !orders) {
+    return (
+      <Loading>
+        <span>.</span>
+        <span>.</span>
+        <span>.</span>
+      </Loading>
+    );
+  }
 
   if (error) {
     return <h2 style={{ textAlign: "center" }}>{error}</h2>;

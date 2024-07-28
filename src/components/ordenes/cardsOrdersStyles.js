@@ -63,3 +63,41 @@ export const ContainerNoOrder = styled.div`
     font-size: 1rem;
   }
 `;
+
+export const Loading = styled.div`
+  font-weight: 600;
+  font-size: 16px;
+  padding: 30%;
+  width: 100vw;
+  min-height: 100vh;
+  border-radius: 5px;
+  text-align: center;
+  span {
+    color: var(--black);
+    animation: loading 2s infinite;
+    font-size: 25px;
+  }
+  span:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  span:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+
+  span:nth-child(3) {
+    animation-delay: 1s;
+  }
+  @keyframes loading {
+    0%,
+    20%,
+    80%,
+    100% {
+      opacity: 0;
+    }
+    40%,
+    60% {
+      opacity: 1;
+    }
+  }
+`;
