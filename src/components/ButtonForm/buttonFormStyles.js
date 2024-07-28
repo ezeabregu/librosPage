@@ -17,4 +17,7 @@ export const ButtonFormStyled = styled.button`
   &:hover {
     opacity: 0.8;
   }
+  &:disabled {
+    cursor: not-allowed;
+  }
 `;

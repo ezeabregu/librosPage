@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const ContainerMyOrders = styled.div`
   width: 100vw;
+  min-height: 100vh;
   max-width: 1300px;
   margin-top: 90px;
   display: flex;

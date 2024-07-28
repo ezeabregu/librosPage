@@ -136,8 +136,12 @@ const User = ({ cartItems, shippingCost }) => {
                   <span>.</span>
                 </Loading>
               ) : (
-                <ButtonForm disabled={!cartItems.length}>
-                  Finalizar compra
+                <ButtonForm
+                  disabled={!cartItems.length || currentUser.verified === false}
+                >
+                  {currentUser.verified === false
+                    ? "Debes verificar la cuenta"
+                    : "Finalizar compra"}
                 </ButtonForm>
               )}
             </ContainerTotalCheckout>
