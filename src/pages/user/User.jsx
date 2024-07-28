@@ -55,6 +55,7 @@ const User = ({ cartItems, shippingCost }) => {
         };
         try {
           await createOrder(orderData, dispatch, currentUser);
+          navigate("/myorders");
           dispatch(limpiarCarrito());
         } catch (error) {
           alert("Error al intentar crear la orden!");
