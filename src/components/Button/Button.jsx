@@ -13,7 +13,7 @@ const Button = ({ onClick = (e) => e.preventDefault() }) => {
 
   const handleClick = () => {
     setIsActive(true);
-    setButtonText("Comprando... ");
+    setButtonText("Agregando... ");
 
     setTimeout(() => {
       setButtonText("Listo! ");

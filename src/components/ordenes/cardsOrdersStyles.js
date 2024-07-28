@@ -8,13 +8,14 @@ export const ContainerOrder = styled.div`
   display: flex;
   justify-content: start;
   align-items: center;
-  background-color: #0c0c0c;
+  background-color: var(--rojo);
   padding-left: 1rem;
   border-radius: 5px;
+  margin: 8px;
   cursor: pointer;
   -webkit-box-shadow: 10px 7px 8px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 7px 8px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 10px 7px 8px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   @media (max-width: 800px) {
     width: 300px;
   }
@@ -28,7 +29,8 @@ export const ContainerData = styled.div`
   gap: 15px;
   width: 75%;
   span {
-    color: #ffffff;
+    color: var(--WalterWhite);
+    font-weight: 500;
   }
 `;
 
@@ -52,9 +54,12 @@ export const Check = styled(CiCircleCheck)`
 
 export const ContainerNoOrder = styled.div`
   width: 300px;
-  text-align: center;
-  h2 {
-    color: #ffffff;
-    font-size: 1.2rem;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    color: var(--moreGray);
+    font-size: 1rem;
   }
 `;

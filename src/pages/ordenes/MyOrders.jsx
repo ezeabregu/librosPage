@@ -8,10 +8,11 @@ import { clearError, fetchOrdersFail } from "../../redux/orders/ordersSlice";
 import CardsOrders from "../../components/ordenes/CardsOrders";
 
 const MyOrders = () => {
-  const navigate = useNavigate();
   const currentUser = useSelector((state) => state.user.currentUser);
-  const dispatch = useDispatch();
   const { orders, error } = useSelector((state) => state.orders);
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!orders) {

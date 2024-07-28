@@ -13,7 +13,7 @@ import { formatoPrecio } from "../../utils/formatoPrecio";
 import { formatoFecha } from "../../utils/formatoFecha";
 
 const CardsOrders = () => {
-  const { orders, loading, error } = useSelector();
+  const { orders, loading, error } = useSelector((state) => state.orders);
 
   if (loading && !orders) {
     return <Loading />;
@@ -32,7 +32,7 @@ const CardsOrders = () => {
               <ContainerData>
                 <span>ID: #{order._id.slice(0, 12)}</span>
                 <span>Fecha: {formatoFecha(order.createdAt)}</span>
-                <span>Total: {formatoPrecio(order.price)} </span>
+                <span>Total: {formatoPrecio(order.total)} </span>
               </ContainerData>
               <ContainerIcon>
                 {order.status === "pending" && <Pending />}
@@ -43,7 +43,7 @@ const CardsOrders = () => {
         })
       ) : (
         <ContainerNoOrder>
-          <h2>Aquí aparectan tus órdenes</h2>
+          <span>Aquí estarán tus órdenes</span>
         </ContainerNoOrder>
       )}
     </>
