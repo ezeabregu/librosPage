@@ -18,7 +18,7 @@ const MyOrders = () => {
     if (!orders) {
       getOrders(dispatch, currentUser);
     }
-    if (!currentUser.token) {
+    if (!currentUser?.token) {
       dispatch(fetchOrdersFail());
     } else {
       error && dispatch(clearError());
