@@ -1,8 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const INITIAL_STATE = {
-  getLibroslibros: null,
-  getTotalLibros: 0,
+  getLibros: null,
 };
 
 export const librosSlice = createSlice({
@@ -12,11 +11,16 @@ export const librosSlice = createSlice({
     getLibros: (state) => {
       return { ...state };
     },
-    getTotalLibros: (state, action) => {
-      return { ...state, totalDeLibros: action.payload };
+    fetchOrdersSuccess: (state, action) => {
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        libros: [...action.payload],
+      };
     },
   },
 });
 
-export const { getLibros, getTotalLibros } = librosSlice.actions;
+export const { getLibros, fetchOrdersSuccess } = librosSlice.actions;
 export default librosSlice.reducer;

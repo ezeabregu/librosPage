@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   ProductCardsStyledContainer,
   ProductsContainer,
@@ -12,14 +12,20 @@ import Product from "./Product";
 import { INITIAL_LIMIT_BOOKS } from "../../utils/constants";
 import ButtonDefect from "../ButtonDefect/ButtonDefect";
 import { FiDelete } from "react-icons/fi";
-//import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getLibros } from "../../axios/axiosLibro";
 
 const ProductsCards = () => {
-  //let librosFromDB = useSelector((state) => state.libros.libros);
+  const { libros } = useSelector((state) => state.libros);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!libros) {
+      getLibros(dispatch);
+    }
+  }, [dispatch, libros]);
 
   const [limit, setLimit] = useState(INITIAL_LIMIT_BOOKS);
-
-  let LibrosCopy = {};
 
   // const [value, setValue] = useState("");
   const [search, setSearch] = useState("");
@@ -40,8 +46,12 @@ const ProductsCards = () => {
     setSearch(e.target.value);
   };
 
+  let LibrosCopy = {};
+
   if (!search) {
+    //LibrosCopy = Libros;
     LibrosCopy = Libros;
+    console.log("Libros:", libros);
   } else {
     LibrosCopy = Libros.filter((dato) => {
       return dato.title.toLowerCase().includes(search.toLowerCase());
