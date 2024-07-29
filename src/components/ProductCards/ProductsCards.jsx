@@ -7,7 +7,7 @@ import {
   LinkButtonContainer,
   LabelNotFound,
 } from "./productCardsStyles";
-import { Libros, TotalLibros } from "../../data/libros";
+import { TotalLibros, Libros } from "../../data/libros";
 import Product from "./Product";
 import { INITIAL_LIMIT_BOOKS } from "../../utils/constants";
 import ButtonDefect from "../ButtonDefect/ButtonDefect";
@@ -16,14 +16,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { getLibros } from "../../axios/axiosLibro";
 
 const ProductsCards = () => {
-  const { libros } = useSelector((state) => state.libros);
+  const libros = useSelector((state) => state.libros);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!libros) {
+    if (!libros.libros) {
       getLibros(dispatch);
     }
-  }, [dispatch, libros]);
+  }, [dispatch, libros.libros]);
 
   const [limit, setLimit] = useState(INITIAL_LIMIT_BOOKS);
 
@@ -46,17 +46,15 @@ const ProductsCards = () => {
     setSearch(e.target.value);
   };
 
-  let LibrosCopy = {};
+  let LibrosCopy = [];
 
   if (!search) {
     //LibrosCopy = Libros;
     LibrosCopy = Libros;
-    console.log("Libros:", libros);
   } else {
     LibrosCopy = Libros.filter((dato) => {
       return dato.title.toLowerCase().includes(search.toLowerCase());
     });
-
     // doScroll();
   }
 
